@@ -1,0 +1,102 @@
+[gd_scene format=4 uid="uid://cg5igfwj6n0av"]
+
+[ext_resource type="Texture2D" uid="uid://b8u5ihtf4l574" path="res://SPRITE/tilehome.png" id="1_xhpqh"]
+[ext_resource type="Script" uid="uid://c6yac4mnd5yd4" path="res://SCRIPT/playerhome.gd" id="2_ak2ew"]
+[ext_resource type="Texture2D" uid="uid://cue1yw0yn75u8" path="res://SPRITE/Sprite-0001.png" id="2_b3ky7"]
+[ext_resource type="Texture2D" uid="uid://cj4ri284h8363" path="res://SPRITE/door.png" id="4_yw4hn"]
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_xhpqh"]
+tile_data = PackedInt32Array(0, 65536, 1342177281, 65536, 65536, 1342177281, 131072, 65536, 1342177281, 196608, 65536, 1342177281, 262144, 65536, 1342177281, 327680, 65536, 1342177281, 393216, 65536, 1342177281, 458752, 65536, 1342177281, 524288, 65536, 1342177281, 1, 65536, 1610612737, 65537, 65536, 1610612737, 131073, 65536, 1610612737, 196609, 65536, 1610612737, 262145, 65536, 1610612737, 327681, 65536, 1610612737, 393217, 65536, 1610612737, 458753, 65536, 1610612737, 524289, 65536, 1610612737, 2, 65536, 1342177281, 65538, 65536, 1342177281, 131074, 65536, 1342177281, 196610, 65536, 1342177281, 262146, 65536, 1342177281, 327682, 65536, 1342177281, 393218, 65536, 1342177281, 458754, 65536, 1342177281, 524290, 65536, 1342177281, 3, 65536, 1610612737, 65539, 65536, 1610612737, 131075, 65536, 1610612737, 196611, 65536, 1610612737, 262147, 65536, 1610612737, 327683, 65536, 1610612737, 393219, 65536, 1610612737, 458755, 65536, 1610612737, 524291, 65536, 1610612737)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b3ky7"]
+texture = ExtResource("1_xhpqh")
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ak2ew"]
+sources/0 = SubResource("TileSetAtlasSource_b3ky7")
+pattern_0 = SubResource("TileMapPattern_xhpqh")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b3ky7"]
+size = Vector2(358, 19.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ak2ew"]
+size = Vector2(20, 216)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ak2ew"]
+radius = 7.0
+height = 16.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ak2ew"]
+radius = 9.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h1hrd"]
+size = Vector2(18, 34)
+
+[node name="home" type="Node2D" unique_id=1025622009]
+texture_filter = 3
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=743042152]
+tile_map_data = PackedByteArray("AAD1/wUAAAAAAAEAAAD2/wUAAAAAAAEAAAD3/wUAAAAAAAEAAAD4/wUAAAAAAAEAAAD5/wUAAAAAAAEAAAD6/wUAAAAAAAEAAAD7/wUAAAAAAAEAAAD8/wUAAAAAAAEAAAD9/wUAAAAAAAEAAAD+/wUAAAAAAAEAAAD//wUAAAAAAAEAAAAAAAUAAAAAAAEAAAABAAUAAAAAAAEAAAACAAUAAAAAAAEAAAADAAUAAAAAAAEAAAAEAAUAAAAAAAEAAAAFAAUAAAAAAAEAAAAGAAUAAAAAAAEAAAAHAAUAAAAAAAEAAAAIAAUAAAAAAAEAAAAJAAUAAAAAAAEAAAAKAAUAAAAAAAEAAAA=")
+tile_set = SubResource("TileSet_ak2ew")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1068355961]
+
+[node name="WALLS" type="CharacterBody2D" parent="Camera2D" unique_id=1978237793]
+collision_layer = 3
+collision_mask = 3
+
+[node name="bottomcollision" type="CollisionShape2D" parent="Camera2D/WALLS" unique_id=1948607748]
+position = Vector2(0, 91)
+shape = SubResource("RectangleShape2D_b3ky7")
+
+[node name="leftcollision" type="CollisionShape2D" parent="Camera2D/WALLS" unique_id=825704807]
+position = Vector2(-186, -3)
+shape = SubResource("RectangleShape2D_ak2ew")
+
+[node name="right collision" type="CollisionShape2D" parent="Camera2D/WALLS" unique_id=915024016]
+texture_filter = 3
+position = Vector2(186, 3)
+shape = SubResource("RectangleShape2D_ak2ew")
+
+[node name="playerhome" type="CharacterBody2D" parent="." unique_id=2046810890]
+script = ExtResource("2_ak2ew")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="playerhome" unique_id=1011004876]
+shape = SubResource("CapsuleShape2D_ak2ew")
+
+[node name="Sprite2D" type="Sprite2D" parent="playerhome" unique_id=1538212979]
+texture = ExtResource("2_b3ky7")
+
+[node name="playerhomearea" type="Area2D" parent="playerhome" unique_id=105253693]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="playerhome/playerhomearea" unique_id=827117053]
+shape = SubResource("CircleShape2D_ak2ew")
+
+[node name="door1" type="Area2D" parent="." unique_id=371735729]
+position = Vector2(126, 63)
+collision_layer = 16
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="door1" unique_id=1862645179]
+z_index = -1
+texture = ExtResource("4_yw4hn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door1" unique_id=925222155]
+shape = SubResource("RectangleShape2D_h1hrd")
+
+[node name="door1Label" type="Label" parent="door1" unique_id=827657018]
+offset_left = -33.0
+offset_top = -70.0
+offset_right = 43.0
+offset_bottom = -21.0
+text = "PRESS \"E\"
+TO ENTER"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="area_entered" from="playerhome/playerhomearea" to="playerhome" method="_on_playerhomearea_area_entered"]
+[connection signal="area_exited" from="playerhome/playerhomearea" to="playerhome" method="_on_playerhomearea_area_exited"]
