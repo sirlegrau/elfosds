@@ -1,7 +1,7 @@
 extends Node
 
 @onready var world = $"../World";
-@onready var player = $"../World/Player";
+@onready var player = $"../World/level/Player";
 @onready var level = $"../World/level"
 @onready var home = $"../World/Home"
 

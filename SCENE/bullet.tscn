@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://c7nnm3ivg41as"]
+
+[ext_resource type="Script" uid="uid://di887lefhbb4" path="res://SCRIPT/bullet.gd" id="1_yq5wi"]
+[ext_resource type="Texture2D" uid="uid://d0obkhwrnyw7d" path="res://SPRITE/ball.png" id="2_j6asi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ipngp"]
+radius = 3.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j6asi"]
+radius = 4.0
+
+[node name="Bullet" type="CharacterBody2D" unique_id=1145605218]
+texture_filter = 3
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_yq5wi")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=544914340]
+texture = ExtResource("2_j6asi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=260853816]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_ipngp")
+
+[node name="bullet_hurtbox" type="Area2D" parent="." unique_id=608620313]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bullet_hurtbox" unique_id=1951573555]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_j6asi")

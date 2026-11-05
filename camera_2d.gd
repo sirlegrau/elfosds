@@ -11,7 +11,4 @@ func _process(delta: float) -> void:
 	#print(tilemap.local_to_map($"./Enemy".position))
 	position = player.position
 
-	
-	
-	
 	pass

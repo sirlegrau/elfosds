@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://deno2g2wo5o27" path="res://SCRIPT/level.gd" id="1_rsdve"]
 [ext_resource type="PackedScene" uid="uid://lrsouy7k7dh4" path="res://SCENE/player.tscn" id="3_rsdve"]
 [ext_resource type="TileSet" uid="uid://cgkjon2k7rwqg" path="res://SPRITE/bk.tres" id="4_gsvho"]
+[ext_resource type="Texture2D" uid="uid://cs0ekacdm1c5u" path="res://SPRITE/sand.png" id="4_rsdve"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vbneo"]
 size = Vector2(409, 20)
@@ -36,9 +37,9 @@ offset_bottom = 40.0
 [node name="hp" type="Label" parent="Camera2D/GUI" unique_id=394138546]
 layout_mode = 0
 offset_left = -168.0
-offset_top = 129.0
+offset_top = 124.0
 offset_right = -128.0
-offset_bottom = 152.0
+offset_bottom = 147.0
 
 [node name="xmas" type="Label" parent="Camera2D/GUI" unique_id=286719592]
 layout_mode = 0
@@ -54,6 +55,11 @@ offset_left = 45.0
 offset_top = 124.0
 offset_right = 85.0
 offset_bottom = 147.0
+text = "111"
+
+[node name="Sprite2D" type="Sprite2D" parent="Camera2D/GUI" unique_id=1610040655]
+position = Vector2(35, 137)
+texture = ExtResource("4_rsdve")
 
 [node name="WALLS" type="CharacterBody2D" parent="Camera2D" unique_id=547793316]
 collision_layer = 3
@@ -78,7 +84,7 @@ shape = SubResource("RectangleShape2D_gsvho")
 position = Vector2(-1, 121)
 shape = SubResource("RectangleShape2D_rsdve")
 
-[node name="Player" parent="." unique_id=1466040692 instance=ExtResource("3_rsdve")]
+[node name="Player" parent="." unique_id=1466040692 groups=["Player"] instance=ExtResource("3_rsdve")]
 
 [node name="EnemyCooldown" type="Timer" parent="." unique_id=107472092]
 one_shot = true
@@ -88,5 +94,9 @@ wait_time = 10.0
 one_shot = true
 autostart = true
 
+[node name="ostias" type="Timer" parent="." unique_id=590762315]
+autostart = true
+
 [connection signal="timeout" from="EnemyCooldown" to="." method="_on_enemy_cooldown_timeout"]
 [connection signal="timeout" from="SleepyTime" to="." method="_on_sleepy_time_timeout"]
+[connection signal="timeout" from="ostias" to="Player" method="_on_ostias_timeout"]

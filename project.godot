@@ -28,6 +28,10 @@ window/stretch/scale=2.0
 
 enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg", "res://addons/script-ide/plugin.cfg", "res://addons/yard/plugin.cfg")
 
+[global_group]
+
+Player=""
+
 [input]
 
 right={
