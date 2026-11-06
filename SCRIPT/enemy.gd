@@ -35,7 +35,7 @@ func _physics_process(delta: float) -> void:
 	
 
 	
-
+## On Enemy Stay , dmg también
 func _on_area_2_denemy_area_entered(area: Area2D) -> void:
 	if String(area.name) == ("bullet_hurtbox"):
 		hp -= 3;

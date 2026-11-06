@@ -17,6 +17,7 @@ config/features=PackedStringArray("4.7", "Forward Plus")
 [autoload]
 
 Globalctr="*uid://b5ey774fa005o"
+InteractionManager="*uid://0wr7nxojt1t6"
 
 [display]
 

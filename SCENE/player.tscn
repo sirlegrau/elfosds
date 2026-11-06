@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://lrsouy7k7dh4"]
 
-[ext_resource type="Script" path="res://SCRIPT/player.gd" id="1_a2qa7"]
-[ext_resource type="Texture2D" uid="uid://cua2464q0x76v" path="res://SPRITE/Sprite-0001.png" id="2_m0ta0"]
+[ext_resource type="Script" uid="uid://cxheijarq2srd" path="res://SCRIPT/player.gd" id="1_a2qa7"]
+[ext_resource type="Texture2D" uid="uid://cue1yw0yn75u8" path="res://SPRITE/Sprite-0001.png" id="2_m0ta0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s47mi"]
 radius = 5.0
@@ -10,56 +10,58 @@ height = 14.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_a2qa7"]
 radius = 22.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_m0ta0"]
-radius = 3.0
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a2qa7"]
 radius = 7.0
 height = 16.0
 
-[node name="Player" type="CharacterBody2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_m0ta0"]
+radius = 3.0
+
+[node name="Player" type="CharacterBody2D" unique_id=1412354880]
 texture_filter = 3
 script = ExtResource("1_a2qa7")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1573523805]
 z_index = 1
 texture = ExtResource("2_m0ta0")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=667493952]
 z_index = 1
 position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_s47mi")
+debug_color = Color(0.9327964, 0.20297596, 0.40474543, 0.41960785)
 
-[node name="shootCooldown" type="Timer" parent="."]
+[node name="shootCooldown" type="Timer" parent="." unique_id=1120769590]
 one_shot = true
 
-[node name="grabarea" type="Area2D" parent="."]
-visible = false
+[node name="grabArea" type="Area2D" parent="." unique_id=1196090333]
 collision_layer = 0
 collision_mask = 8
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="grabarea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grabArea" unique_id=957528549]
 shape = SubResource("CircleShape2D_a2qa7")
+debug_color = Color(0.59237397, 0.37530854, 1, 0.41960785)
 
-[node name="collectarea" type="Area2D" parent="."]
-visible = false
-collision_layer = 0
-collision_mask = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="collectarea"]
-shape = SubResource("CircleShape2D_m0ta0")
-
-[node name="playerHitbox" type="Area2D" parent="."]
+[node name="playerHitbox" type="Area2D" parent="." unique_id=848303489]
 collision_layer = 0
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="playerHitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="playerHitbox" unique_id=340837866]
 position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_a2qa7")
+debug_color = Color(0, 0.63197637, 0.45985234, 0.41960785)
 
-[node name="hitboxCooldown" type="Timer" parent="."]
+[node name="collectArea" type="Area2D" parent="." unique_id=808391619]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="collectArea" unique_id=599360187]
+shape = SubResource("CircleShape2D_m0ta0")
+debug_color = Color(1, 1, 1, 0.41960785)
+
+[node name="hitboxCooldown" type="Timer" parent="." unique_id=1340880405]
 one_shot = true
 
-[connection signal="area_entered" from="grabarea" to="." method="_on_grabarea_area_entered"]
-[connection signal="area_entered" from="collectarea" to="." method="_on_collectarea_area_entered"]
+[connection signal="area_entered" from="grabArea" to="." method="_on_grabarea_area_entered"]
 [connection signal="area_entered" from="playerHitbox" to="." method="_on_player_hitbox_area_entered"]
+[connection signal="area_entered" from="collectArea" to="." method="_on_collectarea_area_entered"]

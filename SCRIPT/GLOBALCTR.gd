@@ -13,7 +13,6 @@ var xmas = 0;
 var canEnter = false;
 
 ## LEVEL 🔫🔫 VARIABLES ##
-var CAMERAPOSy = null;
 var playerHP = 3;
 var levelSpeed = 0.03;
 var sleepy = false;
@@ -25,8 +24,6 @@ func _ready() 	-> void:
 func _process(delta: float) -> void:
 	if get_tree().get_nodes_in_group("enemy").size() == 0 and is_instance_valid(level):
 		levelSpeed = levelSpeed *1.1;
-	if CAMERAPOSy != null:
-		levelSpeed = 0.03 + (float(CAMERAPOSy)/-300)
 
 	if Input.get_action_strength("interact") && canEnter:
 		home.queue_free();

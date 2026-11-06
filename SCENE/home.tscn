@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b8u5ihtf4l574" path="res://SPRITE/tilehome.png" id="1_xhpqh"]
 [ext_resource type="Script" uid="uid://c6yac4mnd5yd4" path="res://SCRIPT/playerhome.gd" id="2_ak2ew"]
 [ext_resource type="Texture2D" uid="uid://cue1yw0yn75u8" path="res://SPRITE/Sprite-0001.png" id="2_b3ky7"]
+[ext_resource type="PackedScene" uid="uid://ddkpmmpu40xx4" path="res://SCENE/machine.tscn" id="4_h1hrd"]
 [ext_resource type="Texture2D" uid="uid://cj4ri284h8363" path="res://SPRITE/door.png" id="4_yw4hn"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_xhpqh"]
@@ -76,6 +77,10 @@ collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="playerhome/playerhomearea" unique_id=827117053]
 shape = SubResource("CircleShape2D_ak2ew")
+
+[node name="BBQ" parent="." unique_id=1763892982 instance=ExtResource("4_h1hrd")]
+z_index = -10
+position = Vector2(48, 68)
 
 [node name="door1" type="Area2D" parent="." unique_id=371735729]
 position = Vector2(126, 63)
