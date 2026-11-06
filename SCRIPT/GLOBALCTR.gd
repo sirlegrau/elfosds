@@ -12,6 +12,7 @@ var nhome = preload("res://SCENE/home.tscn")
 var xmas = 0;
 var canEnter = false;
 
+
 ## LEVEL 🔫🔫 VARIABLES ##
 var CAMERAPOSy = null;
 var playerHP = 3;

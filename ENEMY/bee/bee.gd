@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 const EXP = preload("res://SCENE/exp.tscn");
 
-var totalHP = 1;
+var totalHP = 1;	
 var hp = totalHP;
 @export var knockback_recovery = 3.5
 var knockback = Vector2.ZERO
@@ -32,12 +32,10 @@ func _physics_process(delta: float) -> void:
 		free();
 		return
 
-	
 
-	
 
-func _on_area_2_denemy_area_entered(area: Area2D) -> void:
+func _on_area_2d_area_entered(area: Area2D) -> void:
 	if String(area.name) == ("bullet_hurtbox"):
 		hp -= 3;
 	#print(area.name)
-	pass # Repl
+	pass # Replace with function body.
