@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhtr6n4marjxb"
-path="res://.godot/imported/enemy.png-dff1bb7686da6a6d9d9aee2202d645e9.ctex"
+uid="uid://2ad62a6gr678"
+path="res://.godot/imported/candycane.png-0ba672c7ee01294e02dcfc7b5eb75495.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SPRITE/enemy.png"
-dest_files=["res://.godot/imported/enemy.png-dff1bb7686da6a6d9d9aee2202d645e9.ctex"]
+source_file="res://SPRITE/candycane.png"
+dest_files=["res://.godot/imported/candycane.png-0ba672c7ee01294e02dcfc7b5eb75495.ctex"]
 
 [params]
 

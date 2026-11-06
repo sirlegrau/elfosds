@@ -24,13 +24,13 @@ texture = ExtResource("1_esf57")
 position = Vector2(0, 3)
 shape = SubResource("CapsuleShape2D_am8f8")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1173187601]
+[node name="area2denemy" type="Area2D" parent="." unique_id=1173187601]
 position = Vector2(18, 3)
 collision_layer = 4
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1745831436]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="area2denemy" unique_id=1745831436]
 position = Vector2(-18, 0)
 shape = SubResource("CapsuleShape2D_w0dtl")
 
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="area2denemy" to="." method="_on_area_2d_area_entered"]

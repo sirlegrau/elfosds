@@ -21,7 +21,7 @@ func _on_player_hitbox_area_entered(area: Area2D) -> void:
 	#print(area.name)
 	if area.name == ("area2denemy") && $hitboxCooldown.is_stopped():
 		Globalctr.playerHP -= 1;
-		$hitboxCooldown.start(3)
+		$hitboxCooldown.start(2)
 	if area.name == "trapdoorarea":
 		doorlabel.visible = true
 		Levelctrl.descend = true;

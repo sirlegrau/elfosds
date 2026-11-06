@@ -1,9 +1,16 @@
 extends Node
 
-
+#VARIABLES THAT CHECK IF A ROOM IS CLEARED AND TRIGGERS STUFF
 var descend = false;
-var nLevel = 0;
 var waves=5;
+var obliterate = false;
+
+#SETS THE ROOM LEVEL
+var nLevel = 0;
+#CHECK IF A ROOM HAS ALREADY STARTED AND PREVENTS DUPLICATES
+var readyStart=true;
+
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -17,5 +24,6 @@ func _process(delta: float) -> void:
 		nLevel+=1;
 		waves= nLevel+3;
 		descend = false;
+		readyStart=true;
 		print_debug(nLevel)
 	pass
