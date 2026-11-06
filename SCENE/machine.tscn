@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(14, 25)
 
-[node name="Node2D" type="Node2D" unique_id=1763892982]
+[node name="Machine" type="Node2D" unique_id=1763892982]
 script = ExtResource("1_udcwt")
 
 [node name="Machine" type="Sprite2D" parent="." unique_id=18259087]

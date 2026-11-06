@@ -1,12 +1,13 @@
 extends Node2D
 
-@onready var player = get_tree().get_first_node_in_group("player")
+@onready var player = get_tree().get_first_node_in_group("CanInteract")
 @onready var label = $Label
 
 const base_text = "[E] to "
 
 var active_areas= []
 var can_interact = true
+
 
 func register_area(area: InteractionArea):
 	active_areas.push_back(area)
@@ -17,6 +18,12 @@ func unregister_area(area: InteractionArea):
 		active_areas.remove_at(index)
 
 func _process(delta):
+	# Fixes
+	#
+	# Invalid access to property or key 'global_position' 
+	# on a base object of type 'previously freed'.
+	if player == null: player = get_tree().get_first_node_in_group("CanInteract")
+	
 	if active_areas.size() > 0 && can_interact:
 		active_areas.sort_custom(_sort_by_distance_to_player)
 		# Labels format

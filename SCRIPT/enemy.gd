@@ -25,9 +25,9 @@ func _physics_process(delta: float) -> void:
 	elif direction.x < -0.2:
 		sprite.flip_h = false
 	if hp <= 0 :
-		var exp = EXP.instantiate();
-		exp.position = position;
-		Globalctr.level.add_child(exp);
+		var _exp = EXP.instantiate();
+		_exp.position = position;
+		Globalctr.level.add_child(_exp);
 		self.remove_from_group("enemy")
 		free();
 		return
