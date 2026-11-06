@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 const BULLET = preload("res://SCENE/bullet.tscn");
-
+@onready var doorlabel = $"../trapdoorarea/Label"
 # Called when the node enters the scene tree for the first time.
 
 func _ready() -> void:
@@ -16,6 +16,7 @@ func _process(delta: float) -> void:
 	
 	#look_at(get_global_mouse_position())
 	pass
+
 func _on_player_hitbox_area_entered(area: Area2D) -> void:
 	#print(area.name)
 	if area.name == ("area2denemy") && $hitboxCooldown.is_stopped():
