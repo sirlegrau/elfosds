@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://3chqk804ab3v"]
+
+[ext_resource type="Texture2D" uid="uid://ts6khh4hnmg1" path="res://ENEMY/soul/soul.png" id="1_esf57"]
+[ext_resource type="Script" uid="uid://bwd78ks2em0vl" path="res://ENEMY/soul/soul.gd" id="1_xhe6l"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_am8f8"]
+radius = 7.0
+height = 24.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w0dtl"]
+radius = 9.0
+height = 28.0
+
+[node name="Soul" type="CharacterBody2D" unique_id=20342196]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_xhe6l")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2015629706]
+texture_filter = 1
+texture = ExtResource("1_esf57")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=56085344]
+position = Vector2(0, 3)
+shape = SubResource("CapsuleShape2D_am8f8")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1173187601]
+position = Vector2(18, 3)
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1745831436]
+position = Vector2(-18, 0)
+shape = SubResource("CapsuleShape2D_w0dtl")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

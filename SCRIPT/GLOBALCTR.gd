@@ -13,7 +13,7 @@ var xmas = 0;
 var canEnter = false;
 
 ## LEVEL 🔫🔫 VARIABLES ##
-var playerHP = 0;
+var playerHP = 3;
 var levelSpeed = 0.03;
 var sleepy = false;
 
