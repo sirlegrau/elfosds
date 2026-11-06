@@ -22,7 +22,7 @@ func _process(delta):
 	#
 	# Invalid access to property or key 'global_position' 
 	# on a base object of type 'previously freed'.
-	if player == null: player = get_tree().get_first_node_in_group("CanInteract")
+	if player == null: player = get_tree().get_first_node_in_group("Player")
 	
 	if active_areas.size() > 0 && can_interact:
 		active_areas.sort_custom(_sort_by_distance_to_player)

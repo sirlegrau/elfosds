@@ -41,8 +41,6 @@ func _startGame():
 func _stopGame():
 	if sleepy == true || playerHP <= 0:
 			if is_instance_valid(level):
-				player = $"../World/LEVEL/Player";
-				player.remove_from_group("Player")
 				level.queue_free()
 				var newhome = nhome.instantiate();
 				world.add_child(newhome);
