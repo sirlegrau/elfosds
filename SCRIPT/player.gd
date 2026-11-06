@@ -1,12 +1,11 @@
 extends CharacterBody2D
 
 const BULLET = preload("res://SCENE/bullet.tscn");
-@onready var doorlabel = $"../trapdoorarea/Label"
-@onready var level = $"../LEVEL"
+
 # Called when the node enters the scene tree for the first time.
 
 func _ready() -> void:
-	doorlabel.visible = false
+	
 	pass # Replace with function body.
 
 
@@ -36,11 +35,12 @@ func _on_player_hitbox_area_exited(area: Area2D) -> void:
 func _on_grabarea_area_entered(area: Area2D) -> void:
 	area.target = self
 #COLLECT EXP
+
 func _on_collectarea_area_entered(area: Area2D) -> void:
 	area.collect()
 	Globalctr.xmas += 1;
 
-
+# Shoot function: reemplazar con modulos, solo nos interesa como mueren los enemigos
 func _on_ostias_timeout() -> void:
 	var newbullet = BULLET.instantiate();
 	newbullet.position = global_position;
