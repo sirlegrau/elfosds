@@ -3,7 +3,6 @@ class_name LevelHandler
 
 const HANDLER = preload("res://ENEMY/enemy_handler.tscn")
 @onready var player = $Player;
-@onready var enemyCooldown = $EnemyCooldown;
 @onready var tilemap = $TileMapLayer;
 @onready var sleepyTime = $SleepyTime;
 @onready var trapdoor = $trapdoorarea

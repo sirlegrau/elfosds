@@ -12,7 +12,7 @@ var knockback = Vector2.ZERO
 @onready var player = get_tree().get_first_node_in_group("Player")
 
 func _ready() -> void:
-
+	
 	pass
 func _physics_process(delta: float) -> void:
 	knockback = knockback.move_toward(Vector2.ZERO, knockback_recovery)
@@ -31,11 +31,5 @@ func _physics_process(delta: float) -> void:
 		self.remove_from_group("enemy")
 		free();
 		return
-
-
-
-func _on_area_2d_area_entered(area: Area2D) -> void:
-	if String(area.name) == ("bullet_hurtbox"):
-		hp -= 3;
-	#print(area.name)
-	pass # Replace with function body.
+func take_damage(damage: int) -> void:
+	hp -= damage;

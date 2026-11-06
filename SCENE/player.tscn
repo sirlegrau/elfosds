@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://lrsouy7k7dh4"]
 
 [ext_resource type="Script" uid="uid://cxheijarq2srd" path="res://SCRIPT/player.gd" id="1_a2qa7"]
-[ext_resource type="Texture2D" uid="uid://cue1yw0yn75u8" path="res://SPRITE/Sprite-0001.png" id="2_m0ta0"]
+[ext_resource type="Texture2D" uid="uid://bitjp14ll6gqn" path="res://SPRITE/elf.png" id="2_a2qa7"]
+[ext_resource type="PackedScene" uid="uid://xwvcq50dp2e0" path="res://EQUIPMENT/weapon/weapon.tscn" id="3_m0ta0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s47mi"]
 radius = 5.0
@@ -23,16 +24,15 @@ script = ExtResource("1_a2qa7")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1573523805]
 z_index = 1
-texture = ExtResource("2_m0ta0")
+texture = ExtResource("2_a2qa7")
+
+[node name="weapon" parent="." unique_id=210927100 instance=ExtResource("3_m0ta0")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=667493952]
 z_index = 1
 position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_s47mi")
 debug_color = Color(0.9327964, 0.20297596, 0.40474543, 0.41960785)
-
-[node name="shootCooldown" type="Timer" parent="." unique_id=1120769590]
-one_shot = true
 
 [node name="grabArea" type="Area2D" parent="." unique_id=1196090333]
 collision_layer = 0

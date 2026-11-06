@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://xwvcq50dp2e0"]
+
+[ext_resource type="Texture2D" uid="uid://c0isqploq5w8v" path="res://EQUIPMENT/weapon/weapon.png" id="1_ag750"]
+[ext_resource type="Script" uid="uid://c4n20j1kt3trf" path="res://EQUIPMENT/weapon/weapon.gd" id="2_7vk15"]
+
+[sub_resource type="Animation" id="Animation_s47mi"]
+resource_name = "slash"
+length = 0.3
+step = 0.5
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w6ksp"]
+_data = {
+&"slash": SubResource("Animation_s47mi")
+}
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_am8f8"]
+b = Vector2(9.073632, -5.802516)
+
+[node name="weapon" type="Sprite2D" unique_id=210927100]
+texture = ExtResource("1_ag750")
+offset = Vector2(16, -16)
+script = ExtResource("2_7vk15")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=844825914]
+libraries/ = SubResource("AnimationLibrary_w6ksp")
+
+[node name="weaponCD" type="Timer" parent="." unique_id=1579591519]
+one_shot = true
+
+[node name="weapon_hurtbox" type="Area2D" parent="." unique_id=364235822]
+position = Vector2(0.5290024, -0.81568134)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="weapon_hurtbox" unique_id=952978903]
+position = Vector2(-0.5821228, 0.8131008)
+shape = SubResource("SegmentShape2D_am8f8")
+
+[connection signal="body_entered" from="weapon_hurtbox" to="." method="_on_weapon_hurtbox_body_entered"]
