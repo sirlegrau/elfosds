@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bnhgq7wfq046b"]
+
+[ext_resource type="Script" uid="uid://bm26rqeatfnky" path="res://ENEMY/enemyHANDLER.gd" id="1_gqhx6"]
+
+[node name="EnemyHANDLER" type="Node2D" unique_id=463123851]
+script = ExtResource("1_gqhx6")
+
+[node name="soulTimer" type="Timer" parent="." unique_id=555718334]
+one_shot = true
+
+[node name="beeTimer" type="Timer" parent="." unique_id=1390288503]
+one_shot = true
+
+[node name="wormTimer" type="Timer" parent="." unique_id=2093421048]
+one_shot = true

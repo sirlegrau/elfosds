@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cji2yf7l80kcb"]
 
 [ext_resource type="Script" uid="uid://bwd78ks2em0vl" path="res://ENEMY/soul/soul.gd" id="1_ymicb"]
-[ext_resource type="Texture2D" uid="uid://dxs8bdhkhq550" path="res://ENEMY/bee/bee.png" id="2_d168f"]
+[ext_resource type="Texture2D" uid="uid://cmvnbqicy7yuk" path="res://ENEMY/worm/worm.png" id="2_cjtxd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vbneo"]
 radius = 8.0
@@ -15,18 +15,18 @@ script = ExtResource("1_ymicb")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2015629706]
 texture_filter = 1
-texture = ExtResource("2_d168f")
+texture = ExtResource("2_cjtxd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=56085344]
 shape = SubResource("CircleShape2D_vbneo")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1173187601]
+[node name="area2denemy" type="Area2D" parent="." unique_id=1173187601]
 position = Vector2(18, 3)
 collision_layer = 4
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1745831436]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="area2denemy" unique_id=1745831436]
 position = Vector2(-18, -3)
 shape = SubResource("CircleShape2D_c5pe8")
 
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="area2denemy" to="." method="_on_area_2d_area_entered"]

@@ -10,9 +10,6 @@ height = 14.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_a2qa7"]
 radius = 22.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_m0ta0"]
-radius = 3.0
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a2qa7"]
 radius = 7.0
 height = 16.0

@@ -40,9 +40,10 @@ func _startGame():
 	
 func _stopGame():
 	if sleepy == true || playerHP <= 0:
-			if is_instance_valid(level):
-				level.queue_free()
-				var newhome = nhome.instantiate();
-				world.add_child(newhome);
-				home = $"../World/home"
-				playerHP = 3;
+		if is_instance_valid(level):
+			level.queue_free()
+			var newhome = nhome.instantiate();
+			world.add_child(newhome);
+			home = $"../World/home"
+			playerHP = 3;
+			
