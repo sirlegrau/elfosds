@@ -26,14 +26,13 @@ var wormCD = 2;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
+	print_debug(Levelctrl.nLevel)
 	#DEFINE WAVE SIZES
 	match Levelctrl.nLevel:
 		1:
-			soulWaves = 1;
-			wormWaves= 15
+			wormWaves= 5
 		2:
-			soulWaves =2
+			beeWaves =5
 			wormWaves =2;
 		3:
 			beeWaves = 5;

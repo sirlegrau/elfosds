@@ -1,20 +1,20 @@
 [gd_scene format=3 uid="uid://dxwfruc28ai0y"]
 
-[ext_resource type="Script" uid="uid://clh0xlhqgb5y2" path="res://SCRIPT/exp.gd" id="1_4supn"]
-[ext_resource type="Texture2D" uid="uid://cwh47x4l33g6x" path="res://SPRITE/exp.png" id="2_ioueo"]
+[ext_resource type="Script" uid="uid://clh0xlhqgb5y2" path="res://SCRIPT/loot.gd" id="1_7532b"]
+[ext_resource type="Texture2D" uid="uid://uecn616j6pe0" path="res://SPRITE/honey.png" id="2_7532b"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q66ky"]
 radius = 3.0
 height = 8.0
 
-[node name="exp" type="Area2D" unique_id=1508294455]
+[node name="loot" type="Area2D" unique_id=1508294455]
 texture_filter = 3
 collision_layer = 8
 collision_mask = 0
-script = ExtResource("1_4supn")
+script = ExtResource("1_7532b")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1570335341]
-texture = ExtResource("2_ioueo")
+texture = ExtResource("2_7532b")
 
 [node name="collision" type="CollisionShape2D" parent="." unique_id=1460844487]
 shape = SubResource("CapsuleShape2D_q66ky")

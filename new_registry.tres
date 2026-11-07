@@ -8,8 +8,20 @@ _version = 2
 _scan_rulesets = Array[Dictionary]([{
 &"allowed_file_extensions": Array[String]([]),
 &"class_restrictions": Array[StringName]([]),
-&"recursive_scan": true,
-&"scan_directories": Array[String](["res://ENEMY"]),
+&"recursive_scan": false,
+&"scan_directories": Array[String](["res://ITEMS"]),
 &"scan_regex_exclude": "",
 &"scan_regex_include": ""
 }])
+_uids_to_string_ids = Dictionary[StringName, StringName]({
+&"uid://c0tl0r8iuijjt": &"item",
+&"uid://cod277w75m44m": &"silk",
+&"uid://dwk3xwl0f14wr": &"exp",
+&"uid://gulxofp4ridf": &"honey"
+})
+_string_ids_to_uids = Dictionary[StringName, StringName]({
+&"exp": &"uid://dwk3xwl0f14wr",
+&"honey": &"uid://gulxofp4ridf",
+&"item": &"uid://c0tl0r8iuijjt",
+&"silk": &"uid://cod277w75m44m"
+})

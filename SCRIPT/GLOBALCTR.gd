@@ -3,7 +3,7 @@ extends Node
 @onready var world = $"../World";
 @onready var player = $"../World/LEVEL/Player";
 @onready var level = $"../World/level"
-@onready var home = $"../World/Home"
+@onready var home = $"../World/home"
 
 var sleepyTime = 15;
 @onready var sleepyTimer = $"../World/SleepyTime"
@@ -28,11 +28,15 @@ func _process(delta: float) -> void:
 	if not (sleepyTimer.is_stopped()):
 		sleepyTime = sleepyTimer.time_left
 	else:
-		sleepyTime = 15
+		sleepyTime = 30
 	_stopGame()
 
 func _startGame():
+	home = $"../World/home"
 	home.queue_free();
+
+	Levelctrl.descend= false
+	Levelctrl.nLevel=0;
 	var new = newlevel.instantiate();
 	world.add_child(new)
 	level = $"../World/LEVEL"
@@ -42,13 +46,14 @@ func _startGame():
 	
 func _stopGame():
 	if sleepy == true || playerHP <= 0:
-		level = $LEVEL
+		level = $"../World/LEVEL"
 		if is_instance_valid(level):
 			level.queue_free()
 			var newhome = nhome.instantiate();
 			world.add_child(newhome);
 			home = $"../World/home"
 			playerHP = 3;
+			
 			sleepy = false
 			
 
