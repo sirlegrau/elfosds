@@ -27,7 +27,8 @@ func _physics_process(delta: float) -> void:
 	elif direction.x < -0.2:
 		sprite.flip_h = false
 	if hp <= 0:
-		death()
+		EnemyUtils.death(experience, loot, dropChancePercent, position)
+		queue_free()
 	else:
 		pass
 
@@ -35,25 +36,3 @@ func _physics_process(delta: float) -> void:
 func take_damage(damage, angle, knockback_amount):
 	hp -= damage
 	knockback = angle * knockback_amount
-
-
-func death():
-	var drop:Item = getLootType()
-	var dropInstance = drop.scene.instantiate()
-	dropInstance.position = position;
-	dropInstance.sprite = drop.texture
-	dropInstance.type = drop.name
-	Globalctr.level.add_child(dropInstance);
-	self.remove_from_group("enemy")
-	queue_free()
-	return
-	
-func getLootType() -> Item:
-	var rng = RandomNumberGenerator.new()
-	var chance = int(rng.randf_range(0, 100))
-	print_debug(chance)
-	if chance<=dropChancePercent:
-		return loot
-	else:
-		return experience
-	

@@ -19,8 +19,12 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	
 	if Input.get_action_strength("interact") && descend:
+		var lootables = get_tree().get_nodes_in_group("loot")
+		for loot in lootables:
+			loot.remove_from_group("loot")
+			loot.queue_free()
+		
 		nLevel+=1;
 		waves= nLevel+3;
 		descend = false;

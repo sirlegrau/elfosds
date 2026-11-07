@@ -28,7 +28,7 @@ func _process(delta: float) -> void:
 	if not (sleepyTimer.is_stopped()):
 		sleepyTime = sleepyTimer.time_left
 	else:
-		sleepyTime = 30
+		sleepyTime = 15
 	_stopGame()
 
 func _startGame():
