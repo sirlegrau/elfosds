@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 @export var loot:Item
 @export var experience:Item
-@export var totalHP = 1;
+@export var totalHP = 5;
 var hp = totalHP;
 @export var dropChancePercent=15;
 @export var knockback_recovery = 3.5

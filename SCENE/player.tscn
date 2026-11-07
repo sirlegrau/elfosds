@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cxheijarq2srd" path="res://SCRIPT/player.gd" id="1_a2qa7"]
 [ext_resource type="Texture2D" uid="uid://bitjp14ll6gqn" path="res://SPRITE/elf.png" id="2_a2qa7"]
 [ext_resource type="PackedScene" uid="uid://xwvcq50dp2e0" path="res://EQUIPMENT/weapon/weapon.tscn" id="3_m0ta0"]
+[ext_resource type="PackedScene" uid="uid://nyhn5n17nnfp" path="res://EQUIPMENT/ball/baller.tscn" id="4_s47mi"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s47mi"]
 radius = 5.0
@@ -27,6 +28,8 @@ z_index = 1
 texture = ExtResource("2_a2qa7")
 
 [node name="weapon" parent="." unique_id=210927100 instance=ExtResource("3_m0ta0")]
+
+[node name="Baller" parent="." unique_id=1406802906 instance=ExtResource("4_s47mi")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=667493952]
 z_index = 1

@@ -20,6 +20,7 @@ Globalctr="*uid://b5ey774fa005o"
 Levelctrl="*uid://d77fo1lhfd5x"
 InteractionManager="*uid://0wr7nxojt1t6"
 EnemyUtils="*uid://c5k5ck3ch67py"
+EquipmentUtils="*uid://dyh3atav0svhl"
 
 [display]
 
@@ -32,6 +33,14 @@ window/stretch/scale=2.0
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg", "res://addons/script-ide/plugin.cfg", "res://addons/yard/plugin.cfg")
+
+[file_customization]
+
+folder_colors={
+"res://ENEMY/": "red",
+"res://EQUIPMENT/": "purple",
+"res://ITEMS/": "yellow"
+}
 
 [global_group]
 
