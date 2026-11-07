@@ -1,7 +1,14 @@
 [gd_scene format=3 uid="uid://spw7af2nhoxa"]
 
+[ext_resource type="Script" uid="uid://b5ey774fa005o" path="res://SCRIPT/GLOBALCTR.gd" id="1_bsjl8"]
 [ext_resource type="PackedScene" uid="uid://cg5igfwj6n0av" path="res://SCENE/home.tscn" id="1_vviah"]
 
 [node name="World" type="Node2D" unique_id=688736691]
+script = ExtResource("1_bsjl8")
 
 [node name="Home" parent="." unique_id=1250564676 instance=ExtResource("1_vviah")]
+
+[node name="SleepyTime" type="Timer" parent="." unique_id=978309823]
+one_shot = true
+
+[connection signal="timeout" from="SleepyTime" to="." method="_on_sleepy_time_timeout"]

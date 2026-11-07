@@ -2,11 +2,11 @@ extends CharacterBody2D
 
 const EXP = preload("res://SCENE/exp.tscn");
 
-var totalHP = 10;
+var totalHP = 3;
 var hp = totalHP;
 @export var knockback_recovery = 3.5
 var knockback = Vector2.ZERO
-@export var movementSpeed = 30
+@export var movementSpeed = 35
 @onready var sprite = $Sprite2D
 
 @onready var player = get_tree().get_first_node_in_group("Player")
@@ -32,5 +32,11 @@ func _physics_process(delta: float) -> void:
 		free();
 		return
 
-func take_damage(damage: int) -> void:
+func take_damage(damage, angle, knockback_amount):
 	hp -= damage
+	knockback = angle * knockback_amount
+	print_debug(knockback)
+	#if hp <= 0:
+	#	death()
+	#else:
+	#	snd_hit.play()

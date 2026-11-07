@@ -31,5 +31,10 @@ func _physics_process(delta: float) -> void:
 		self.remove_from_group("enemy")
 		free();
 		return
-func take_damage(damage: int) -> void:
-	hp -= damage;
+func take_damage(damage, angle, knockback_amount):
+	hp -= damage
+	knockback = angle * knockback_amount
+	#if hp <= 0:
+	#	death()
+	#else:
+	#	snd_hit.play()

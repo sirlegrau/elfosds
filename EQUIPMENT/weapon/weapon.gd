@@ -5,8 +5,8 @@ extends Sprite2D
 @onready var animator = $AnimationPlayer
 var slash_time = 0.2
 var damage = 1
-
-
+var knockback = 90;
+var angle = Vector2.ZERO;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -49,6 +49,18 @@ func getClosestEnemy() -> CharacterBody2D:
 	return closest
 
 func _on_weapon_hurtbox_body_entered(body: Node2D) -> void:
+	print_debug(rotation)
+	var angle = rotation_to_direction(rad_to_deg(rotation))
+	
 	if(body.is_in_group("enemy")):
-		body.take_damage(damage)
+		if(angle == null):
+			angle = Vector2.ZERO
+		print_debug(angle)
+		body.take_damage(damage, angle, knockback)
 	pass # Replace with function body.
+	
+func rotation_to_direction(rotation_degrees: float) -> Vector2:
+	var rotation_radians = deg_to_rad(rotation_degrees)
+	var direction = Vector2(cos(rotation_radians), sin(rotation_radians))
+	direction = direction.normalized()
+	return direction

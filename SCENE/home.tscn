@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b8u5ihtf4l574" path="res://SPRITE/tilehome.png" id="1_xhpqh"]
 [ext_resource type="Script" uid="uid://c6yac4mnd5yd4" path="res://SCRIPT/playerhome.gd" id="2_ak2ew"]
+[ext_resource type="PackedScene" uid="uid://yb0xorgu8ayr" path="res://utils/gui/gui.tscn" id="2_luq33"]
 [ext_resource type="Texture2D" uid="uid://bitjp14ll6gqn" path="res://SPRITE/elf.png" id="3_h1hrd"]
 [ext_resource type="PackedScene" uid="uid://ddkpmmpu40xx4" path="res://SCENE/machine.tscn" id="4_h1hrd"]
 [ext_resource type="PackedScene" uid="uid://c4dmgl26j5y6t" path="res://SCENE/door.tscn" id="5_h1hrd"]
@@ -41,6 +42,8 @@ tile_map_data = PackedByteArray("AAD1/wUAAAAAAAEAAAD2/wUAAAAAAAEAAAD3/wUAAAAAAAE
 tile_set = SubResource("TileSet_ak2ew")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1068355961]
+
+[node name="GUI" parent="Camera2D" unique_id=339585105 instance=ExtResource("2_luq33")]
 
 [node name="WALLS" type="CharacterBody2D" parent="Camera2D" unique_id=1978237793]
 collision_layer = 3

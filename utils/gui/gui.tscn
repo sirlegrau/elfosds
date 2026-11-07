@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://yb0xorgu8ayr"]
+
+[ext_resource type="Script" uid="uid://drglvbxrpvuih" path="res://utils/gui/gui.gd" id="1_o8lp3"]
+[ext_resource type="Texture2D" uid="uid://cs0ekacdm1c5u" path="res://SPRITE/sand.png" id="2_alkxk"]
+[ext_resource type="Texture2D" uid="uid://xmy8rnn0rmk4" path="res://SPRITE/HUD.png" id="3_ivay6"]
+
+[node name="GUI" type="Control" unique_id=339585105]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_o8lp3")
+
+[node name="hp" type="Label" parent="." unique_id=1082387286]
+z_index = 1
+layout_mode = 0
+offset_left = -185.0
+offset_top = -116.0
+offset_right = -145.0
+offset_bottom = -93.0
+
+[node name="xmas" type="Label" parent="." unique_id=1568417782]
+z_index = 1
+layout_mode = 0
+offset_left = 22.0
+offset_top = -116.0
+offset_right = 62.0
+offset_bottom = -93.0
+text = "77"
+
+[node name="sleep" type="Label" parent="." unique_id=442511073]
+z_index = 1
+layout_mode = 0
+offset_left = 141.0
+offset_top = -117.0
+offset_right = 181.0
+offset_bottom = -94.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "111"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1396801167]
+z_index = 1
+position = Vector2(121, -104)
+texture = ExtResource("2_alkxk")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1073610445]
+texture = ExtResource("3_ivay6")

@@ -31,7 +31,7 @@ func _ready() -> void:
 	match Levelctrl.nLevel:
 		1:
 			soulWaves = 1;
-			beeWaves= 2
+			wormWaves= 15
 		2:
 			soulWaves =2
 			wormWaves =2;
@@ -68,7 +68,6 @@ func WAVEhandler() ->void:
 			
 	#USED BY CONTROLLED TO CHECK IF A ROOM IS CLEARED
 	Levelctrl.waves = soulWaves+beeWaves+wormWaves;
-	print_debug(Levelctrl.waves)
 
 func spawnWithOutTimer (waves: int, waveCooldown: int, type:PackedScene) -> int:
 	createEnemy(type)
