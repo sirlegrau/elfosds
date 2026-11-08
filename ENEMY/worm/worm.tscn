@@ -20,6 +20,7 @@ experience = ExtResource("2_lcxf7")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2015629706]
 texture_filter = 1
 texture = ExtResource("2_cjtxd")
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=56085344]
 shape = SubResource("CircleShape2D_vbneo")

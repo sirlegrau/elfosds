@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 @export var loot:Item
 @export var experience:Item
-@export var totalHP = 5;
+@export var totalHP = 5
 var hp = totalHP;
 @export var dropChancePercent=15;
 @export var knockback_recovery = 3.5
@@ -22,10 +22,8 @@ func _physics_process(delta: float) -> void:
 	velocity = direction*movementSpeed
 	velocity += knockback
 	move_and_slide()	
-	if direction.x > 0.2:
-		sprite.flip_h = true
-	elif direction.x < -0.2:
-		sprite.flip_h = false
+	sprite.flip_h = EnemyUtils.flipSpriteH(direction, sprite.flip_h)
+
 	if hp <= 0:
 		EnemyUtils.death(experience, loot, dropChancePercent, position)
 		queue_free()

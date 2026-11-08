@@ -22,16 +22,13 @@ func _physics_process(delta: float) -> void:
 	velocity = direction*movementSpeed
 	velocity += knockback
 	move_and_slide()	
-	if direction.x > 0.2:
-		sprite.flip_h = true
-	elif direction.x < -0.2:
-		sprite.flip_h = false
+	sprite.flip_h = EnemyUtils.flipSpriteH(direction, sprite.flip_h)
+
 	if hp <= 0:
 		EnemyUtils.death(experience, loot, dropChancePercent, position)
 		queue_free()
 	else:
 		pass
-
 
 func take_damage(damage, angle, knockback_amount):
 	hp -= damage

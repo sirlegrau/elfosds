@@ -26,3 +26,10 @@ func getLootType(experience:Item, loot:Item, dropChancePercent:int) -> Item:
 	else:
 		return experience
 	
+func flipSpriteH(direction :Vector2, current:bool) -> bool:
+	if direction.x > 0.2:
+		return true
+	elif direction.x < -0.2:
+		return  false
+	else: 
+		return current
