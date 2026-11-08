@@ -3,7 +3,10 @@ extends Node
 @onready var world = $"../World";
 @onready var player = $"../World/LEVEL/Player";
 @onready var level = $"../World/level"
-@onready var home = $"../World/Home"
+@onready var home = $"../World/home"
+
+var sleepyTime = 15;
+@onready var sleepyTimer = $"../World/SleepyTime"
 
 var newlevel = preload("res://SCENE/level.tscn")
 var nhome = preload("res://SCENE/home.tscn")
@@ -22,24 +25,28 @@ func _ready() 	-> void:
 	pass
 	
 func _process(delta: float) -> void:
-	if get_tree().get_nodes_in_group("enemy").size() == 0 and is_instance_valid(level):
-		levelSpeed = levelSpeed *1.1;
+	if not (sleepyTimer.is_stopped()):
+		sleepyTime = sleepyTimer.time_left
+	else:
+		sleepyTime = 15
 	_stopGame()
 
-func checkEnemy() -> void:
-	pass
-
-
 func _startGame():
+	home = $"../World/home"
 	home.queue_free();
+
+	Levelctrl.descend= false
+	Levelctrl.nLevel=0;
 	var new = newlevel.instantiate();
 	world.add_child(new)
 	level = $"../World/LEVEL"
 	player = $"../World/Player";
 	sleepy = false
+	sleepyTimer.start(sleepyTime)
 	
 func _stopGame():
 	if sleepy == true || playerHP <= 0:
+		level = $"../World/LEVEL"
 		if is_instance_valid(level):
 			level.queue_free()
 			var newhome = nhome.instantiate();
@@ -47,3 +54,10 @@ func _stopGame():
 			home = $"../World/home"
 			playerHP = 3;
 			
+			sleepy = false
+			
+
+
+func _on_sleepy_time_timeout() -> void:
+	print_debug("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASFDGASDFGASDGASD")
+	sleepy = true

@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://cji2yf7l80kcb"]
 
-[ext_resource type="Script" uid="uid://bwd78ks2em0vl" path="res://ENEMY/soul/soul.gd" id="1_ymicb"]
+[ext_resource type="Script" uid="uid://ddbj7oot8g0jr" path="res://ENEMY/worm/worm.gd" id="1_cjtxd"]
 [ext_resource type="Texture2D" uid="uid://cmvnbqicy7yuk" path="res://ENEMY/worm/worm.png" id="2_cjtxd"]
+[ext_resource type="Resource" uid="uid://dwk3xwl0f14wr" path="res://ITEMS/exp.tres" id="2_lcxf7"]
+[ext_resource type="Resource" uid="uid://cod277w75m44m" path="res://ITEMS/silk.tres" id="3_fbw6s"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vbneo"]
 radius = 8.0
@@ -11,7 +13,9 @@ radius = 8.0
 [node name="Soul" type="CharacterBody2D" unique_id=20342196]
 collision_layer = 3
 collision_mask = 3
-script = ExtResource("1_ymicb")
+script = ExtResource("1_cjtxd")
+loot = ExtResource("3_fbw6s")
+experience = ExtResource("2_lcxf7")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2015629706]
 texture_filter = 1

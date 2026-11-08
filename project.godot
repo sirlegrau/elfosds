@@ -19,9 +19,13 @@ config/features=PackedStringArray("4.7", "Forward Plus")
 Globalctr="*uid://b5ey774fa005o"
 Levelctrl="*uid://d77fo1lhfd5x"
 InteractionManager="*uid://0wr7nxojt1t6"
+EnemyUtils="*uid://c5k5ck3ch67py"
+EquipmentUtils="*uid://dyh3atav0svhl"
 
 [display]
 
+window/size/viewport_width=854
+window/size/viewport_height=480
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 window/stretch/scale=2.0
@@ -30,10 +34,19 @@ window/stretch/scale=2.0
 
 enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg", "res://addons/script-ide/plugin.cfg", "res://addons/yard/plugin.cfg")
 
+[file_customization]
+
+folder_colors={
+"res://ENEMY/": "red",
+"res://EQUIPMENT/": "purple",
+"res://ITEMS/": "yellow"
+}
+
 [global_group]
 
 Player=""
 CanInteract=""
+Loot="used to clear the floor on descension"
 
 [input]
 

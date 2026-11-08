@@ -26,14 +26,13 @@ var wormCD = 2;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
+	print_debug(Levelctrl.nLevel)
 	#DEFINE WAVE SIZES
 	match Levelctrl.nLevel:
 		1:
-			soulWaves = 1;
-			beeWaves= 2
+			wormWaves= 5
 		2:
-			soulWaves =2
+			beeWaves =5
 			wormWaves =2;
 		3:
 			beeWaves = 5;
@@ -68,7 +67,6 @@ func WAVEhandler() ->void:
 			
 	#USED BY CONTROLLED TO CHECK IF A ROOM IS CLEARED
 	Levelctrl.waves = soulWaves+beeWaves+wormWaves;
-	print_debug(Levelctrl.waves)
 
 func spawnWithOutTimer (waves: int, waveCooldown: int, type:PackedScene) -> int:
 	createEnemy(type)
