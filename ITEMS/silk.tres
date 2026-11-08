@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Item" format=3 uid="uid://cod277w75m44m"]
 
 [ext_resource type="PackedScene" uid="uid://dxwfruc28ai0y" path="res://SCENE/loot.tscn" id="1_n3erh"]
-[ext_resource type="Script" uid="uid://c0tl0r8iuijjt" path="res://ITEMS/item.gd" id="2_vou8a"]
+[ext_resource type="Script" uid="uid://c0tl0r8iuijjt" path="res://ITEMS/loot.gd" id="2_vou8a"]
 [ext_resource type="Texture2D" uid="uid://bjnc7h084e64w" path="res://SPRITE/silk.png" id="3_vou8a"]
 
 [resource]
