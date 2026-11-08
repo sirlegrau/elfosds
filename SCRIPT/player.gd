@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 
 @onready var doorlabel = $"../trapdoorarea/Label"
+@onready var sprite = $"Sprite2D"
 # Called when the node enters the scene tree for the first time.
 
 func _ready() -> void:
@@ -13,7 +14,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	velocity = Input.get_vector("left", "right", "up", "down") *100;
 	move_and_slide()
-	
+	sprite.flip_h = EnemyUtils.flipSpriteH(velocity, sprite.flip_h)
+
 	#look_at(get_global_mouse_position())
 	pass
 
