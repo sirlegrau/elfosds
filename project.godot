@@ -49,6 +49,7 @@ folder_colors={
 Player=""
 CanInteract=""
 Loot="used to clear the floor on descension"
+GUI="find the node and add childs"
 
 [input]
 

@@ -2,7 +2,7 @@ extends Node
 
 signal inventory_updated
 
-
+@onready var inventory_slot_scene = preload("res://utils/gui/InventorySlot.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Datactrl.inventory.resize(16)

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cs0ekacdm1c5u" path="res://SPRITE/sand.png" id="2_alkxk"]
 [ext_resource type="Texture2D" uid="uid://xmy8rnn0rmk4" path="res://SPRITE/HUD.png" id="3_ivay6"]
 
-[node name="GUI" type="Control" unique_id=339585105]
+[node name="GUI" type="Control" unique_id=339585105 groups=["GUI"]]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0

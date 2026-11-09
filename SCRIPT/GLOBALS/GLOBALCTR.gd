@@ -1,10 +1,9 @@
 extends Node
 
 @onready var world = $"../World";
-@onready var player = $"../World/LEVEL/Player";
-@onready var level = $"../World/level"
+@onready var level = null;
 @onready var home = $"../World/home"
-
+@onready var camera = $"../World/home"
 
 var initialSleepyTime= Datactrl.sleepyTime
 var sleepyTime = Datactrl.sleepyTime;
@@ -39,7 +38,6 @@ func _startGame():
 	var new = newlevel.instantiate();
 	world.add_child(new)
 	level = $"../World/LEVEL"
-	player = $"../World/Player";
 	sleepy = false
 	sleepyTimer.start(sleepyTime)
 	
@@ -51,6 +49,7 @@ func _stopGame():
 			level.queue_free()
 			var newhome = nhome.instantiate();
 			world.add_child(newhome);
+			
 			home = $"../World/home"
 			sleepy = false
 		sleepyTimer.stop()
