@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://d2vfv3civwu8g"]
 
-[ext_resource type="Script" uid="uid://m5misgumcnuv" path="res://utils/gui/InventoryUI.gd" id="1_uiubq"]
+[ext_resource type="Script" uid="uid://m5misgumcnuv" path="res://utils/gui/Inventory/InventoryUI.gd" id="1_vx6tl"]
 
 [node name="Inventory_UI" type="Control" unique_id=1141822235]
 layout_mode = 3
 anchors_preset = 0
-script = ExtResource("1_uiubq")
+script = ExtResource("1_vx6tl")
 
 [node name="GridContainer" type="GridContainer" parent="." unique_id=566873658]
 layout_mode = 0

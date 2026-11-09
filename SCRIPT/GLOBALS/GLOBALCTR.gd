@@ -11,13 +11,13 @@ var sleepyTime = Datactrl.sleepyTime;
 
 var newlevel = preload("res://SCENE/level.tscn")
 var nhome = preload("res://SCENE/home.tscn")
-
+var item = load("res://EQUIPMENT/_ITEMS/baller.tres")
 ## GLOBAL 🌍🌍 VARIABLES ##
 var canEnter = false;
 
 ## LEVEL 🔫🔫 VARIABLES ##
 var sleepy = false;
-
+var justone = true
 func _ready() 	-> void:
 	#home.queue_free()
 	pass
@@ -28,7 +28,10 @@ func _process(delta: float) -> void:
 	else:
 		sleepyTime = initialSleepyTime
 	_stopGame()
-
+	if Input.is_action_pressed("getweapon") && justone:
+		justone = false
+		Inventoryctrl.add_item(item)
+		
 func _startGame():
 	home = $"../World/home"
 	home.queue_free();
@@ -59,7 +62,6 @@ func _stopGame():
 
 func _on_sleepy_time_timeout() -> void:
 	sleepy = true
-	
 	
 func _update_Inventory():
 	pass

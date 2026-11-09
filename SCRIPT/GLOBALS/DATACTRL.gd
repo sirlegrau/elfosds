@@ -7,4 +7,4 @@ var loot ={
 	"silk" : 0,
 	"honey" :0
 }
-var inventory:Array
+var inventory = []

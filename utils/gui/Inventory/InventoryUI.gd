@@ -10,11 +10,12 @@ func _ready() -> void:
 
 func _on_inventory_updated():
 	clear_grid_container()
-	for item in Datactrl.inventory:
+	for i in range(Datactrl.inventory.size()):
 		var slot = Inventoryctrl.inventory_slot_scene.instantiate()
 		grid_container.add_child(slot)
+		var item = Datactrl.inventory[i]
 		if item != null:
-			slot.set_item(item)
+			slot.set_item_inventory(item, i)
 		else:
 			slot.set_empty
 	
