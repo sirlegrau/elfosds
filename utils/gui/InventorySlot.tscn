@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://ctrkhlwemsg87"]
+
+[ext_resource type="Script" uid="uid://cwlkrbygwva8v" path="res://utils/gui/InventorySlot.gd" id="1_job7x"]
+[ext_resource type="Texture2D" uid="uid://d0obkhwrnyw7d" path="res://EQUIPMENT/ball/ball.png" id="2_rim17"]
+
+[node name="InventorySlot" type="Control" unique_id=1973149461]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 60.0
+offset_bottom = 60.0
+script = ExtResource("1_job7x")
+
+[node name="OuterBorder" type="ColorRect" parent="." unique_id=258949244]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=806985859]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 0.95000005
+anchor_bottom = 0.95000005
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1728327, 0.17283267, 0.17283267, 1)
+
+[node name="Button" type="Button" parent="ColorRect" unique_id=33844083]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -9.0
+offset_top = -9.0
+offset_right = 9.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+icon = ExtResource("2_rim17")

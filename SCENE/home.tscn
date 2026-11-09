@@ -82,10 +82,6 @@ shape = SubResource("CircleShape2D_ak2ew")
 z_index = -10
 position = Vector2(48, 68)
 
-[node name="BBQ2" parent="." unique_id=582553282 instance=ExtResource("4_h1hrd")]
-z_index = -10
-position = Vector2(39, 68)
-
 [node name="Door" parent="." unique_id=314007857 instance=ExtResource("5_h1hrd")]
 position = Vector2(126, 63)
 

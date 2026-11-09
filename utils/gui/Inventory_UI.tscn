@@ -1,5 +1,0 @@
-[gd_scene format=3 uid="uid://d2vfv3civwu8g"]
-
-[node name="InventoryUi" type="Control" unique_id=1141822235]
-layout_mode = 3
-anchors_preset = 0

@@ -7,6 +7,8 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 	velocity.x = Input.get_axis("left", "right")*150;
 	sprite.flip_h = EnemyUtils.flipSpriteH(velocity, sprite.flip_h)
-
 	# Handle jump.
 	move_and_slide()
+	
+	
+	

@@ -6,10 +6,12 @@ extends CharacterBody2D
 # Called when the node enters the scene tree for the first time.
 
 func _ready() -> void:
+	print_debug(Datactrl.inventory)
 	for item in Datactrl.inventory:
-		var itemInstance = item.scene.instantiate()
-		itemInstance.position = self.position
-		self.add_child(itemInstance);
+		if item != null:
+			var itemInstance = item.scene.instantiate()
+			itemInstance.position = self.position
+			self.add_child(itemInstance);
 	pass # Replace with function body.
 
 
@@ -25,7 +27,7 @@ func _process(delta: float) -> void:
 func _on_player_hitbox_area_entered(area: Area2D) -> void:
 	#print(area.name)
 	if area.name == ("area2denemy") && $hitboxCooldown.is_stopped():
-		Globalctr.playerHP -= 1;
+		Datactrl.playerHP -= 1;
 		$hitboxCooldown.start(2)
 	if area.name == "trapdoorarea":
 		doorlabel.visible = true

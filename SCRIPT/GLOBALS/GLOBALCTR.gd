@@ -6,8 +6,8 @@ extends Node
 @onready var home = $"../World/home"
 
 
-var initialSleepyTime=15
-var sleepyTime = 15;
+var initialSleepyTime= Datactrl.sleepyTime
+var sleepyTime = Datactrl.sleepyTime;
 @onready var sleepyTimer = $"../World/SleepyTime"
 
 var newlevel = preload("res://SCENE/level.tscn")
@@ -17,7 +17,6 @@ var nhome = preload("res://SCENE/home.tscn")
 var canEnter = false;
 
 ## LEVEL 🔫🔫 VARIABLES ##
-var playerHP = 3;
 var sleepy = false;
 
 func _ready() 	-> void:
@@ -45,10 +44,8 @@ func _startGame():
 	sleepyTimer.start(sleepyTime)
 	
 func _stopGame():
-	if sleepy == true || playerHP <= 0:
-		print("ESTOY AQUI PLAYER HP SHOULD BE 3")
-		Globalctr.playerHP = 3;
-		print(playerHP)
+	if sleepy == true || Datactrl.playerHP <= 0:
+		Datactrl.playerHP = 3;
 		level = $"../World/LEVEL"
 		if is_instance_valid(level):
 			level.queue_free()
@@ -62,5 +59,8 @@ func _stopGame():
 			print(str(loot)  + "   " +  str(n))
 
 func _on_sleepy_time_timeout() -> void:
-	print_debug("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASFDGASDFGASDGASD")
 	sleepy = true
+	
+	
+func _update_Inventory():
+	pass
