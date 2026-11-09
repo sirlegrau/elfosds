@@ -4,6 +4,7 @@ extends Node
 @onready var player = $"../World/LEVEL/Player";
 @onready var level = $"../World/level"
 @onready var home = $"../World/home"
+@onready var menu = $"../MainMenu"
 
 
 var initialSleepyTime= Datactrl.sleepyTime
@@ -30,6 +31,13 @@ func _process(delta: float) -> void:
 		sleepyTime = initialSleepyTime
 	_stopGame()
 
+func _launchGameTheGameGameNotTheBrotatoOne():
+	var newhome = nhome.instantiate();
+	world.add_child(newhome);
+	home = $"../World/home"
+	sleepy = false
+	
+	
 func _startGame():
 	home = $"../World/home"
 	home.queue_free();

@@ -38,12 +38,15 @@ radius = 9.0
 texture_filter = 3
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=743042152]
+position = Vector2(429, 240)
 tile_map_data = PackedByteArray("AAD1/wUAAAAAAAEAAAD2/wUAAAAAAAEAAAD3/wUAAAAAAAEAAAD4/wUAAAAAAAEAAAD5/wUAAAAAAAEAAAD6/wUAAAAAAAEAAAD7/wUAAAAAAAEAAAD8/wUAAAAAAAEAAAD9/wUAAAAAAAEAAAD+/wUAAAAAAAEAAAD//wUAAAAAAAEAAAAAAAUAAAAAAAEAAAABAAUAAAAAAAEAAAACAAUAAAAAAAEAAAADAAUAAAAAAAEAAAAEAAUAAAAAAAEAAAAFAAUAAAAAAAEAAAAGAAUAAAAAAAEAAAAHAAUAAAAAAAEAAAAIAAUAAAAAAAEAAAAJAAUAAAAAAAEAAAAKAAUAAAAAAAEAAAA=")
 tile_set = SubResource("TileSet_ak2ew")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1068355961]
+position = Vector2(429, 240)
 
 [node name="GUI" parent="Camera2D" unique_id=339585105 instance=ExtResource("2_luq33")]
+metadata/_edit_use_anchors_ = true
 
 [node name="WALLS" type="CharacterBody2D" parent="Camera2D" unique_id=1978237793]
 collision_layer = 3
@@ -63,6 +66,7 @@ position = Vector2(186, 3)
 shape = SubResource("RectangleShape2D_ak2ew")
 
 [node name="playerhome" type="CharacterBody2D" parent="." unique_id=2046810890 groups=["CanInteract", "Player"]]
+position = Vector2(429, 240)
 script = ExtResource("2_ak2ew")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="playerhome" unique_id=1011004876]
@@ -80,10 +84,10 @@ shape = SubResource("CircleShape2D_ak2ew")
 
 [node name="BBQ" parent="." unique_id=1763892982 instance=ExtResource("4_h1hrd")]
 z_index = -10
-position = Vector2(48, 68)
+position = Vector2(477, 308)
 
 [node name="Door" parent="." unique_id=314007857 instance=ExtResource("5_h1hrd")]
-position = Vector2(126, 63)
+position = Vector2(555, 303)
 
 [connection signal="area_entered" from="playerhome/playerhomearea" to="playerhome" method="_on_playerhomearea_area_entered"]
 [connection signal="area_exited" from="playerhome/playerhomearea" to="playerhome" method="_on_playerhomearea_area_exited"]

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d2vfv3civwu8g"]
 
 [ext_resource type="Script" uid="uid://m5misgumcnuv" path="res://utils/gui/InventoryUI.gd" id="1_uiubq"]
+[ext_resource type="PackedScene" uid="uid://ctrkhlwemsg87" path="res://utils/gui/InventorySlot.tscn" id="2_0t3mu"]
 
 [node name="Inventory_UI" type="Control" unique_id=1141822235]
 layout_mode = 3
@@ -10,7 +11,10 @@ script = ExtResource("1_uiubq")
 [node name="GridContainer" type="GridContainer" parent="." unique_id=566873658]
 layout_mode = 0
 offset_left = 624.0
-offset_top = 286.0
-offset_right = 774.0
-offset_bottom = 436.0
+offset_top = 252.0
+offset_right = 836.0
+offset_bottom = 464.0
 columns = 4
+
+[node name="InventorySlot" parent="GridContainer" unique_id=1973149461 instance=ExtResource("2_0t3mu")]
+layout_mode = 2

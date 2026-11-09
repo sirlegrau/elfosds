@@ -30,7 +30,6 @@ window/size/viewport_width=854
 window/size/viewport_height=480
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
-window/stretch/scale=2.0
 
 [editor_plugins]
 
