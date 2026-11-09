@@ -3,6 +3,6 @@ extends Node2D
 
 func _ready() -> void:
 	interaction_area.interact = Callable(self, "_openMachine")
-
+	
 func _openMachine():
 	print("ding ding")

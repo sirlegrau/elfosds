@@ -18,7 +18,6 @@ var canEnter = false;
 
 ## LEVEL 🔫🔫 VARIABLES ##
 var playerHP = 3;
-var levelSpeed = 0.03;
 var sleepy = false;
 
 func _ready() 	-> void:
