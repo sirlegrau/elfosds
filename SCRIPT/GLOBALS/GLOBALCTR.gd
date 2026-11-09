@@ -14,7 +14,6 @@ var newlevel = preload("res://SCENE/level.tscn")
 var nhome = preload("res://SCENE/home.tscn")
 
 ## GLOBAL 🌍🌍 VARIABLES ##
-var xmas = 0;
 var canEnter = false;
 
 ## LEVEL 🔫🔫 VARIABLES ##
@@ -53,17 +52,15 @@ func _stopGame():
 		print(playerHP)
 		level = $"../World/LEVEL"
 		if is_instance_valid(level):
-			playerHP = 3;
 			level.queue_free()
-			
 			var newhome = nhome.instantiate();
 			world.add_child(newhome);
 			home = $"../World/home"
-			
-			
 			sleepy = false
-		self.playerHP = 3;
 		sleepyTimer.stop()
+		for loot in Datactrl.loot:
+			var n = Datactrl.loot[loot]
+			print(str(loot)  + "   " +  str(n))
 
 func _on_sleepy_time_timeout() -> void:
 	print_debug("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASFDGASDFGASDGASD")

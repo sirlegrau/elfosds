@@ -12,6 +12,6 @@ func _process(delta: float) -> void:
 	pass
 func GUIhandler() -> void:
 	$hp.text ="HP: " + str(Globalctr.playerHP)
-	$xmas.text = str(Globalctr.xmas)
+	$xmas.text = str(Datactrl.loot["exp"])
 	$sleep.text = str(int(Globalctr.sleepyTime))
 	pass

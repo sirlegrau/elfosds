@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cuyg45vto35yk"]
 
 [ext_resource type="Script" uid="uid://cflvyytvmvpw8" path="res://ENEMY/bee/bee.gd" id="1_qqmws"]
-[ext_resource type="Resource" uid="uid://dwk3xwl0f14wr" path="res://ITEMS/exp.tres" id="2_2n8mg"]
-[ext_resource type="Resource" uid="uid://gulxofp4ridf" path="res://ITEMS/honey.tres" id="2_4cyx6"]
+[ext_resource type="Resource" uid="uid://dwk3xwl0f14wr" path="res://LOOT/exp.tres" id="2_2n8mg"]
+[ext_resource type="Resource" uid="uid://gulxofp4ridf" path="res://LOOT/honey.tres" id="2_4cyx6"]
 [ext_resource type="Texture2D" uid="uid://dxs8bdhkhq550" path="res://ENEMY/bee/bee.png" id="2_qqmws"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vbneo"]

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Item" format=3 uid="uid://dwk3xwl0f14wr"]
 
-[ext_resource type="Script" uid="uid://c0tl0r8iuijjt" path="res://ITEMS/loot.gd" id="1_2qi83"]
+[ext_resource type="Script" uid="uid://c0tl0r8iuijjt" path="res://LOOT/loot.gd" id="1_2qi83"]
 [ext_resource type="PackedScene" uid="uid://dxwfruc28ai0y" path="res://SCENE/loot.tscn" id="1_g8lhh"]
 [ext_resource type="Texture2D" uid="uid://cwh47x4l33g6x" path="res://SPRITE/exp.png" id="3_65nto"]
 
