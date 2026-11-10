@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bna8yuc5bv0go"]
+
+[ext_resource type="PackedScene" uid="uid://dfkj06tbmxgi" path="res://utils/gui/Workbench/WorkbenchSlot.tscn" id="1_foh5x"]
+
+[node name="Workbench" type="Control" unique_id=405917587]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="WorkbenchSlot" parent="." unique_id=1899257801 instance=ExtResource("1_foh5x")]
+layout_mode = 0

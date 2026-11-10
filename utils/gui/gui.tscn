@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://xmy8rnn0rmk4" path="res://SPRITE/HUD.png" id="3_ivay6"]
 [ext_resource type="PackedScene" uid="uid://d2vfv3civwu8g" path="res://utils/gui/Inventory/Inventory.tscn" id="4_ivay6"]
 [ext_resource type="PackedScene" uid="uid://c1c2jbb8unjbj" path="res://utils/gui/Wardrobe/Wardrobe.tscn" id="5_2282l"]
+[ext_resource type="PackedScene" uid="uid://bna8yuc5bv0go" path="res://utils/gui/Workbench/Workbench.tscn" id="6_2282l"]
 
 [node name="GUI" type="Control" unique_id=339585105 groups=["GUI"]]
 layout_mode = 3
@@ -46,6 +47,7 @@ position = Vector2(121, -104)
 texture = ExtResource("2_alkxk")
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1073610445]
+texture_filter = 1
 texture = ExtResource("3_ivay6")
 
 [node name="inventory" parent="." unique_id=1141822235 instance=ExtResource("4_ivay6")]
@@ -55,3 +57,11 @@ layout_mode = 0
 [node name="wardrobe" parent="." unique_id=1542517780 instance=ExtResource("5_2282l")]
 visible = false
 layout_mode = 0
+
+[node name="workbench" parent="." unique_id=405917587 groups=["WORKBENCH"] instance=ExtResource("6_2282l")]
+visible = false
+layout_mode = 0
+offset_left = -190.0
+offset_top = -48.0
+offset_right = -190.0
+offset_bottom = -48.0

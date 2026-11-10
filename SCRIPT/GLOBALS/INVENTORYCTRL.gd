@@ -30,24 +30,34 @@ func _openMachine(which:String):
 	match which:
 		"WARDROBE":
 			openWardrobe()
+		"WORKBENCH":
+			openWorkbench()
 	openInventory()
+		
 
 
 func closeALL():
 	closeInventory()
 	closeWardrobe()
-	updateInventory()
-	updateInventory()
+	closeWorkbench()
 func drawALL():
 	drawInventory()
 	drawWardrobe()
+func closeWorkbench():
+	var workbench = get_tree().get_first_node_in_group("WORKBENCH")
+	workbench.visible = false
+	Inventoryctrl.drawInventory()
+func openWorkbench():
+	var workbench = get_tree().get_first_node_in_group("WORKBENCH")
+	workbench.visible = true
+	Inventoryctrl.drawInventory()
 func closeWardrobe():
 	var wardrobe = get_tree().get_first_node_in_group("WARDROBE")
 	wardrobe.visible = false
 	Inventoryctrl.updateWardrobe()
 func openWardrobe():
-	var wardrobe = get_tree().get_first_node_in_group("WARDROBE")
-	wardrobe.visible = true
+	var slots = get_tree().get_first_node_in_group("WARDROBE")
+	slots.visible = true
 	Inventoryctrl.drawWardrobe()
 func closeInventory():
 	var inventory = get_tree().get_first_node_in_group("INVENTORY")
@@ -59,12 +69,15 @@ func openInventory():
 	Inventoryctrl.drawInventory()
 
 func drawInventory():
-	var wardrobe = get_tree().get_first_node_in_group("INVENTORY")
+	var slots = get_tree().get_first_node_in_group("INVENTORY")
 	var index = 0;
-	if(wardrobe != null):
-		for slot in wardrobe.get_children():
+	if(slots != null):
+		print("IM not null and this is the inventory")
+		for slot in slots.get_children():
 			slot.set_item(Datactrl.inventory[index])
+			print(Datactrl.inventory[index])
 			index+=1
+			
 func updateInventory():
 	var wardrobe = get_tree().get_first_node_in_group("INVENTORY")
 	var index = 0;
@@ -74,17 +87,17 @@ func updateInventory():
 			index+=1
 
 func drawWardrobe():
-	var wardrobe = get_tree().get_first_node_in_group("WARDROBE")
+	var slots = get_tree().get_first_node_in_group("WARDROBE")
 	var index = 0;
-	if(wardrobe != null):
-		for slot in wardrobe.get_children():
+	if(slots != null):
+		for slot in slots.get_children():
 			slot.set_item(Datactrl.wardrobe[index])
 			index+=1
 func updateWardrobe():
-	var wardrobe = get_tree().get_first_node_in_group("WARDROBE")
+	var slots = get_tree().get_first_node_in_group("WARDROBE")
 	var index = 0;
-	if(wardrobe != null):
-		for slot in wardrobe.get_children():
+	if(slots != null):
+		for slot in slots.get_children():
 			Datactrl.wardrobe[index] = slot.slot_info.item
 			index+=1
 			

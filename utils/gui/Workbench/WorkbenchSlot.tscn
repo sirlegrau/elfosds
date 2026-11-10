@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dfkj06tbmxgi"]
+
+[ext_resource type="Texture2D" uid="uid://w3c4qtogqq4a" path="res://SPRITE/ItemBaller.png" id="1_mjbbj"]
+
+[node name="WorkbenchSlot" type="PanelContainer" unique_id=1899257801]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Button" type="Button" parent="." unique_id=1442838189]
+texture_filter = 1
+layout_mode = 2
+theme_type_variation = &"FlatButton"
+icon = ExtResource("1_mjbbj")
