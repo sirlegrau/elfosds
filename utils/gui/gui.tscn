@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cs0ekacdm1c5u" path="res://SPRITE/sand.png" id="2_alkxk"]
 [ext_resource type="Texture2D" uid="uid://xmy8rnn0rmk4" path="res://SPRITE/HUD.png" id="3_ivay6"]
 [ext_resource type="PackedScene" uid="uid://d2vfv3civwu8g" path="res://utils/gui/Inventory/Inventory.tscn" id="4_ivay6"]
-[ext_resource type="PackedScene" uid="uid://c1c2jbb8unjbj" path="res://utils/gui/Wardrobe/Wardrove.tscn" id="5_2282l"]
+[ext_resource type="PackedScene" uid="uid://c1c2jbb8unjbj" path="res://utils/gui/Wardrobe/Wardrobe.tscn" id="5_2282l"]
 
 [node name="GUI" type="Control" unique_id=339585105 groups=["GUI"]]
 layout_mode = 3
