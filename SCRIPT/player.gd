@@ -6,8 +6,8 @@ extends CharacterBody2D
 # Called when the node enters the scene tree for the first time.
 
 func _ready() -> void:
-	print_debug(Datactrl.inventory)
-	for item in Datactrl.inventory:
+	print_debug(Datactrl.wardrobe)
+	for item in Datactrl.wardrobe:
 		if item != null:
 			var itemInstance = item.scene.instantiate()
 			itemInstance.position = self.position

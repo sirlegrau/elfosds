@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://ddkpmmpu40xx4"]
+
+[ext_resource type="Script" uid="uid://dbf0m0mugabb1" path="res://SCENE/HOME/machine.gd" id="1_gtnk3"]
+[ext_resource type="Texture2D" uid="uid://k6u7q1xcfwl3" path="res://SPRITE/bbq.png" id="2_dvxrp"]
+[ext_resource type="PackedScene" uid="uid://ciayo2tvo8uhi" path="res://utils/interaction/InteractionArea.tscn" id="3_r43bi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(14, 25)
+
+[node name="Machine" type="Node2D" unique_id=1763892982]
+script = ExtResource("1_gtnk3")
+type = "FORGE"
+texture = ExtResource("2_dvxrp")
+
+[node name="Machine" type="Sprite2D" parent="." unique_id=18259087]
+texture_filter = 1
+texture = ExtResource("2_dvxrp")
+
+[node name="InteractionArea" parent="." unique_id=783147577 instance=ExtResource("3_r43bi")]
+action_name = "open the machine"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=1418613019]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_g4v7s")

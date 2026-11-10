@@ -8,3 +8,4 @@ var loot ={
 	"honey" :0
 }
 var inventory = []
+var wardrobe = []

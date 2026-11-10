@@ -1,17 +1,18 @@
 [gd_scene format=4 uid="uid://cg5igfwj6n0av"]
 
-[ext_resource type="Texture2D" uid="uid://b8u5ihtf4l574" path="res://SPRITE/tilehome.png" id="1_xhpqh"]
-[ext_resource type="Script" uid="uid://c6yac4mnd5yd4" path="res://SCRIPT/playerhome.gd" id="2_ak2ew"]
-[ext_resource type="PackedScene" uid="uid://yb0xorgu8ayr" path="res://utils/gui/gui.tscn" id="2_luq33"]
-[ext_resource type="Texture2D" uid="uid://bitjp14ll6gqn" path="res://SPRITE/elf.png" id="3_h1hrd"]
-[ext_resource type="PackedScene" uid="uid://ddkpmmpu40xx4" path="res://SCENE/machine.tscn" id="4_h1hrd"]
-[ext_resource type="PackedScene" uid="uid://c4dmgl26j5y6t" path="res://SCENE/door.tscn" id="5_h1hrd"]
+[ext_resource type="Texture2D" uid="uid://b8u5ihtf4l574" path="res://SPRITE/tilehome.png" id="1_atuxs"]
+[ext_resource type="PackedScene" uid="uid://yb0xorgu8ayr" path="res://utils/gui/gui.tscn" id="2_ado30"]
+[ext_resource type="Script" uid="uid://c6yac4mnd5yd4" path="res://SCRIPT/playerhome.gd" id="3_38ctp"]
+[ext_resource type="Texture2D" uid="uid://bitjp14ll6gqn" path="res://SPRITE/elf.png" id="4_ujbub"]
+[ext_resource type="PackedScene" uid="uid://ddkpmmpu40xx4" path="res://SCENE/HOME/machine.tscn" id="5_os0d8"]
+[ext_resource type="Texture2D" uid="uid://cs0ekacdm1c5u" path="res://SPRITE/sand.png" id="6_7jt04"]
+[ext_resource type="PackedScene" uid="uid://c4dmgl26j5y6t" path="res://SCENE/HOME/door.tscn" id="7_dwmyk"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_xhpqh"]
 tile_data = PackedInt32Array(0, 65536, 1342177281, 65536, 65536, 1342177281, 131072, 65536, 1342177281, 196608, 65536, 1342177281, 262144, 65536, 1342177281, 327680, 65536, 1342177281, 393216, 65536, 1342177281, 458752, 65536, 1342177281, 524288, 65536, 1342177281, 1, 65536, 1610612737, 65537, 65536, 1610612737, 131073, 65536, 1610612737, 196609, 65536, 1610612737, 262145, 65536, 1610612737, 327681, 65536, 1610612737, 393217, 65536, 1610612737, 458753, 65536, 1610612737, 524289, 65536, 1610612737, 2, 65536, 1342177281, 65538, 65536, 1342177281, 131074, 65536, 1342177281, 196610, 65536, 1342177281, 262146, 65536, 1342177281, 327682, 65536, 1342177281, 393218, 65536, 1342177281, 458754, 65536, 1342177281, 524290, 65536, 1342177281, 3, 65536, 1610612737, 65539, 65536, 1610612737, 131075, 65536, 1610612737, 196611, 65536, 1610612737, 262147, 65536, 1610612737, 327683, 65536, 1610612737, 393219, 65536, 1610612737, 458755, 65536, 1610612737, 524291, 65536, 1610612737)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b3ky7"]
-texture = ExtResource("1_xhpqh")
+texture = ExtResource("1_atuxs")
 0:0/0 = 0
 1:0/0 = 0
 0:1/0 = 0
@@ -43,7 +44,7 @@ tile_set = SubResource("TileSet_ak2ew")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1068355961]
 
-[node name="GUI" parent="Camera2D" unique_id=339585105 instance=ExtResource("2_luq33")]
+[node name="GUI" parent="Camera2D" unique_id=339585105 instance=ExtResource("2_ado30")]
 
 [node name="WALLS" type="CharacterBody2D" parent="Camera2D" unique_id=1978237793]
 collision_layer = 3
@@ -63,13 +64,13 @@ position = Vector2(186, 3)
 shape = SubResource("RectangleShape2D_ak2ew")
 
 [node name="playerhome" type="CharacterBody2D" parent="." unique_id=2046810890 groups=["CanInteract", "Player"]]
-script = ExtResource("2_ak2ew")
+script = ExtResource("3_38ctp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="playerhome" unique_id=1011004876]
 shape = SubResource("CapsuleShape2D_ak2ew")
 
 [node name="Sprite2D" type="Sprite2D" parent="playerhome" unique_id=1538212979]
-texture = ExtResource("3_h1hrd")
+texture = ExtResource("4_ujbub")
 
 [node name="playerhomearea" type="Area2D" parent="playerhome" unique_id=105253693]
 collision_layer = 0
@@ -78,12 +79,16 @@ collision_mask = 16
 [node name="CollisionShape2D" type="CollisionShape2D" parent="playerhome/playerhomearea" unique_id=827117053]
 shape = SubResource("CircleShape2D_ak2ew")
 
-[node name="BBQ" parent="." unique_id=1763892982 instance=ExtResource("4_h1hrd")]
-z_index = -10
-position = Vector2(48, 68)
+[node name="Machine" parent="." unique_id=1763892982 instance=ExtResource("5_os0d8")]
+position = Vector2(71, 72)
+type = "WARDROBE"
+texture = ExtResource("6_7jt04")
 
-[node name="Door" parent="." unique_id=314007857 instance=ExtResource("5_h1hrd")]
-position = Vector2(126, 63)
+[node name="Machine2" parent="." unique_id=1989131176 instance=ExtResource("5_os0d8")]
+position = Vector2(-92, 68)
+
+[node name="Door" parent="." unique_id=314007857 instance=ExtResource("7_dwmyk")]
+position = Vector2(144, 64)
 
 [connection signal="area_entered" from="playerhome/playerhomearea" to="playerhome" method="_on_playerhomearea_area_entered"]
 [connection signal="area_exited" from="playerhome/playerhomearea" to="playerhome" method="_on_playerhomearea_area_exited"]

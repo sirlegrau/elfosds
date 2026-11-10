@@ -10,8 +10,9 @@ var sleepyTime = Datactrl.sleepyTime;
 @onready var sleepyTimer = $"../World/SleepyTime"
 
 var newlevel = preload("res://SCENE/level.tscn")
-var nhome = preload("res://SCENE/home.tscn")
+var nhome = preload("res://SCENE/HOME/home.tscn")
 var item = load("res://EQUIPMENT/_ITEMS/baller.tres")
+
 ## GLOBAL 🌍🌍 VARIABLES ##
 var canEnter = false;
 
@@ -33,6 +34,7 @@ func _process(delta: float) -> void:
 		Inventoryctrl.add_item(item)
 		
 func _startGame():
+	Inventoryctrl.closeALL()
 	home = $"../World/home"
 	home.queue_free();
 
@@ -55,11 +57,14 @@ func _stopGame():
 			
 			home = $"../World/home"
 			sleepy = false
+			
 		sleepyTimer.stop()
 		for loot in Datactrl.loot:
 			var n = Datactrl.loot[loot]
 			print(str(loot)  + "   " +  str(n))
-
+		Inventoryctrl.drawALL()	
+		###This clears the area array to prevent calculating a freed area
+		InteractionManager.active_areas= []
 func _on_sleepy_time_timeout() -> void:
 	sleepy = true
 	

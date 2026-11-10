@@ -1,6 +1,8 @@
 extends Control
 
-@onready var texture_rect = $icon
+@export_enum("HAT", "WEAPON", "SWEATER", "ANY") var type: String = "ANY"
+
+@onready var slot_info = $icon
 
 
 ###
@@ -21,56 +23,47 @@ func _process(delta: float) -> void:
 	pass
 
 func set_empty():
-	texture_rect.texture = null
-	texture_rect.item = null
-	
-func set_item_inventory(newItem: Item, i:int):
-	texture_rect.item = newItem
-	inventorySlotPosition = i;
-	texture_rect.texture = texture_rect.item.texture;
-	hoverName.text = texture_rect.item.name
-	hoverLevel.text = "Level: " + str(texture_rect.item.level)
-	
+	slot_info.texture = null
+	slot_info.item = null
+
 func set_item(newItem: Item,):
-	texture_rect.texture = newItem.texture
-	texture_rect.property["ITEM"] = newItem
-	texture_rect.property["TEXTURE"] = newItem.texture;
-	hoverName.text = texture_rect.property["ITEM"].name
-	hoverLevel.text = "Level: " + str(texture_rect.property["ITEM"].level)
+	if(newItem):
+		slot_info.texture = newItem.texture
+		slot_info.property["ITEM"] = newItem
+		slot_info.item =newItem
+		slot_info.property["TEXTURE"] = newItem.texture;
+	else: set_empty()
 
 
 func _get_drag_data(at_position: Vector2) -> Variant:
 	set_drag_preview(get_preview())
-	return texture_rect
+	return slot_info
  
 func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
-	return data is TextureRect
+	return data is TextureRect and ( (self.type == "ANY") or self.type == data.type)
+		
  
 func _drop_data(at_position: Vector2, data: Variant) -> void:
-	var temp = texture_rect.property
-	texture_rect.property = data.property
+	var temp = slot_info.property
+	slot_info.property = data.property
 	data.property = temp
-	print(texture_rect.property)
+
 func get_preview():
 	var preview_texture = TextureRect.new()
- 
-	preview_texture.texture = texture_rect.texture
+	preview_texture.texture = slot_info.texture
 	preview_texture.expand_mode = 1
-	preview_texture.size = Vector2(30,30)
+	preview_texture.size = Vector2(25,25)
 	preview_texture.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
- 
 	var preview = Control.new()
 	preview.add_child(preview_texture)
- 
 	return preview
 
-
 func _on_mouse_entered() -> void:
-	print(self.texture_rect.property)
-	hover.visible = true
-	pass # Replace with function body.
+	if(slot_info.item != null):
+		hover.visible = true
+	pass 
 
 
 func _on_mouse_exited() -> void:
 	hover.visible = false
-	pass # Replace with function body.
+	pass

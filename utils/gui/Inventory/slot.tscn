@@ -1,15 +1,15 @@
 [gd_scene format=3 uid="uid://yavxnpbh4qqf"]
 
-[ext_resource type="Script" uid="uid://cwlkrbygwva8v" path="res://utils/gui/Inventory/InventorySlot.gd" id="1_7f2lt"]
-[ext_resource type="Script" uid="uid://ou8am5uwnnhj" path="res://utils/gui/Inventory/slotData.gd" id="2_5vcqg"]
+[ext_resource type="Script" uid="uid://cwlkrbygwva8v" path="res://utils/gui/Inventory/slot.gd" id="1_he8k6"]
+[ext_resource type="Script" uid="uid://ou8am5uwnnhj" path="res://utils/gui/Inventory/slotInfo.gd" id="2_pufam"]
 
-[node name="InventorySlot" type="PanelContainer" unique_id=750758387]
+[node name="slot" type="PanelContainer" unique_id=750758387]
 custom_minimum_size = Vector2(40, 40)
 offset_left = 10.0
 offset_top = 10.0
 offset_right = 50.0
 offset_bottom = 50.0
-script = ExtResource("1_7f2lt")
+script = ExtResource("1_he8k6")
 
 [node name="OuterBorder" type="ColorRect" parent="." unique_id=258949244]
 custom_minimum_size = Vector2(30, 30)
@@ -23,9 +23,12 @@ color = Color(0.1728327, 0.17283267, 0.17283267, 1)
 
 [node name="Hovered" type="ColorRect" parent="." unique_id=167049733]
 layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(-30, -30)
 color = Color(0.5251013, 0.5251013, 0.5251013, 1)
 
 [node name="Name" type="Label" parent="Hovered" unique_id=998450619]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 3.0
 offset_top = -1.0
@@ -35,6 +38,7 @@ theme_override_font_sizes/font_size = 8
 text = "Name:"
 
 [node name="Level" type="Label" parent="Hovered" unique_id=1132429277]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 3.0
 offset_top = 20.0
@@ -48,7 +52,7 @@ z_index = 1024
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 expand_mode = 1
-script = ExtResource("2_5vcqg")
+script = ExtResource("2_pufam")
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
