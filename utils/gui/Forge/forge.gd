@@ -6,6 +6,7 @@ extends Control
 @onready var mainSlot = $slots/mainslot
 @onready var slot1 = $slots/slot
 @onready var slot2 = $slots/slot2
+var weapon = load("res://EQUIPMENT/_ITEMS/weapon.tres")
 var red = Color(1.0, 0.0, 0.0, 1.0)
 var white = Color(1.0, 1.0, 1.0, 1.0)
 
@@ -21,14 +22,10 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func _forgeItemRemoved():
-	print("removed")
 	slot1.visible = false
 	slot2.visible = false
 
 func _forgeItemAdded(data:Variant):
-	if(data.property["ITEM"].name != null):
-		print(data.property["ITEM"].name)
-		print(data.level)
 	slot1.visible = true
 	slot2.visible = true
 	
@@ -52,3 +49,17 @@ func displayXMAS():
 		xmas.set("theme_override_colors/font_color",red)
 	else:
 		xmas.set("theme_override_colors/font_color",white)
+
+
+func _on_can_craft_pressed() -> void:
+	canCraft.disabled = true
+	var item = mainSlot.slot_info.property["ITEM"].duplicate(true)
+	item.level +=1
+	Inventoryctrl.updateInventory()
+	Inventoryctrl.drawInventory()
+	Inventoryctrl.add_item(item)
+	for slot in slots.get_children():
+		slot.set_empty()
+	Datactrl.timesbought["FORGE"] += 1
+	displayXMAS()
+	pass # Replace with function body.

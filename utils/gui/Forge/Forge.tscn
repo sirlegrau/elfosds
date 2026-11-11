@@ -80,3 +80,5 @@ offset_bottom = 20.0
 size_flags_horizontal = 8
 text = ":"
 ellipsis_char = ""
+
+[connection signal="pressed" from="canCraft" to="." method="_on_can_craft_pressed"]

@@ -34,8 +34,9 @@ func _process(delta: float) -> void:
 		Inventoryctrl.add_item(item)
 		
 func _startGame():
-	Inventoryctrl.closeALL()
-	
+	Inventoryctrl.updateInventory()
+	Inventoryctrl.updateWardrobe()
+	print(Datactrl.inventory)
 	home = $"../World/home"
 	home.queue_free();
 
@@ -62,7 +63,9 @@ func _stopGame():
 		sleepyTimer.stop()
 		for loot in Datactrl.loot:
 			var n = Datactrl.loot[loot]
-		Inventoryctrl.drawALL()	
+		Inventoryctrl.updateInventory()
+		Inventoryctrl.updateWardrobe()
+		
 		###This clears the area array to prevent calculating a freed area
 		InteractionManager.active_areas= []
 func _on_sleepy_time_timeout() -> void:

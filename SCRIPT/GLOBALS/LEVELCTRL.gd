@@ -30,5 +30,4 @@ func _process(delta: float) -> void:
 		waves= nLevel+3;
 		descend = false;
 		readyStart=true;
-		print_debug(nLevel)
 	pass

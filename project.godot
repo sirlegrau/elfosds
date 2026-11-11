@@ -17,8 +17,8 @@ config/features=PackedStringArray("4.7", "Forward Plus")
 [autoload]
 
 Datactrl="*uid://cypwc42nxnn4t"
-Globalctr="*uid://b5ey774fa005o"
 Inventoryctrl="*uid://7guy27ln8pj3"
+Globalctr="*uid://b5ey774fa005o"
 Levelctrl="*uid://d77fo1lhfd5x"
 InteractionManager="*uid://0wr7nxojt1t6"
 EnemyUtils="*uid://c5k5ck3ch67py"

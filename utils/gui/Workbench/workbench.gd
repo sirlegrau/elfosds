@@ -26,7 +26,6 @@ func _workbenchItemPressed(item:Item):
 	
 	clearCostGrid()
 	selectedItem = item
-	print (item.name)
 	
 	### cost is an Array with [Loot, int]
 	for cost in selectedItem.cost:

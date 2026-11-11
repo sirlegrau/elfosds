@@ -49,6 +49,7 @@ func closeALL():
 func drawALL():
 	drawInventory()
 	drawWardrobe()
+	
 func closeForge():
 	var forge = get_tree().get_first_node_in_group("FORGE")
 	forge.visible = false
@@ -81,6 +82,7 @@ func openInventory():
 	var inventory = get_tree().get_first_node_in_group("INVENTORY")
 	inventory.visible = true
 	Inventoryctrl.drawInventory()
+	print(Datactrl.inventory)
 
 
 func dumpForgeItems():
