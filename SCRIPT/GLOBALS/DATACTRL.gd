@@ -8,9 +8,10 @@ var sleepyTime = 15;
 
 ### THIS DICTIONARY HOLDS PLAYER CURRENT ITEMS  
 var loot ={
-	"exp" : 0,
-	"silk" : 0,
-	"honey" :0
+	### TO BE RENAMED XMAS
+	"exp" : 51,
+	"silk" : 31,
+	"honey" :1
 }
 
 ### THIS ARRAY HOLDS PLAYER INVENTORY USED ACROSS ALL MACHINES
@@ -22,5 +23,7 @@ var wardrobe = []
 ###this dictionary holds key -> item.name  value -> +1 when crafted in workbench
 var timesbought= {
 	"baller" = 0,
-	"weapon" = 0
+	"weapon" = 0,
+	"WORKBENCH"=0,
+	"FORGE"=3
 }

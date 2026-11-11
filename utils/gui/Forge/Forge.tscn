@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://dcf8h5880b8dn"]
+
+[ext_resource type="PackedScene" uid="uid://yavxnpbh4qqf" path="res://utils/gui/Inventory/slot.tscn" id="1_njs4s"]
+[ext_resource type="Script" uid="uid://xfuympe6lkt8" path="res://utils/gui/Forge/forge.gd" id="1_yv7ru"]
+[ext_resource type="Script" uid="uid://cv8rjw4skkw7a" path="res://utils/gui/Forge/ForgeSlot.gd" id="2_2mnqk"]
+[ext_resource type="Texture2D" uid="uid://cwh47x4l33g6x" path="res://SPRITE/exp.png" id="3_2mnqk"]
+
+[node name="Forge" type="Control" unique_id=450669747]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_yv7ru")
+
+[node name="slots" type="Control" parent="." unique_id=1011474117 groups=["FORGESLOTS"]]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="mainslot" parent="slots" unique_id=750758387 instance=ExtResource("1_njs4s")]
+layout_mode = 0
+offset_left = -72.0
+offset_top = -20.0
+offset_right = -32.0
+offset_bottom = 20.0
+script = ExtResource("2_2mnqk")
+
+[node name="slot" parent="slots" unique_id=1010003606 instance=ExtResource("1_njs4s")]
+layout_mode = 0
+offset_left = -143.0
+offset_top = -56.0
+offset_right = -103.0
+offset_bottom = -16.0
+
+[node name="slot2" parent="slots" unique_id=1449279636 instance=ExtResource("1_njs4s")]
+layout_mode = 0
+offset_left = -143.0
+offset_top = 7.0
+offset_right = -103.0
+offset_bottom = 47.0
+
+[node name="canCraft" type="Button" parent="." unique_id=39802772]
+layout_mode = 0
+offset_left = -12.0
+offset_top = 37.0
+offset_right = 35.0
+offset_bottom = 68.0
+text = "Craft"
+
+[node name="Control" type="Control" parent="." unique_id=1287358561]
+anchors_preset = 0
+offset_left = -8.0
+offset_top = 13.0
+offset_right = 32.0
+offset_bottom = 31.0
+
+[node name="xmasicon" type="TextureRect" parent="Control" unique_id=617936116]
+texture_filter = 1
+custom_maximum_size = Vector2(20, 20)
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("3_2mnqk")
+expand_mode = 2
+
+[node name="xmascost" type="Label" parent="Control" unique_id=261001157]
+layout_mode = 0
+offset_left = 25.0
+offset_top = -2.0
+offset_right = 43.0
+offset_bottom = 21.0
+size_flags_horizontal = 8
+text = "5"
+ellipsis_char = ""
+
+[node name="cost2" type="Label" parent="Control" unique_id=1723029115]
+layout_mode = 0
+offset_left = 18.0
+offset_top = -3.0
+offset_right = 36.0
+offset_bottom = 20.0
+size_flags_horizontal = 8
+text = ":"
+ellipsis_char = ""

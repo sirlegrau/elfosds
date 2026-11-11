@@ -32,21 +32,35 @@ func _openMachine(which:String):
 			openWardrobe()
 		"WORKBENCH":
 			openWorkbench()
+		"FORGE":
+			openForge()
+		
 	openInventory()
 		
 
 
 func closeALL():
 	closeInventory()
-	closeWardrobe()
+	closeForge()
 	closeWorkbench()
+	closeWardrobe()
+	
+	
 func drawALL():
 	drawInventory()
 	drawWardrobe()
+func closeForge():
+	var forge = get_tree().get_first_node_in_group("FORGE")
+	forge.visible = false
+	dumpForgeItems()
+func openForge():
+	var forge = get_tree().get_first_node_in_group("FORGE")
+	forge.visible = true
+	Inventoryctrl.drawInventory()
 func closeWorkbench():
 	var workbench = get_tree().get_first_node_in_group("WORKBENCH")
 	workbench.visible = false
-	Inventoryctrl.drawInventory()
+	Inventoryctrl.updateInventory()
 func openWorkbench():
 	var workbench = get_tree().get_first_node_in_group("WORKBENCH")
 	workbench.visible = true
@@ -68,16 +82,24 @@ func openInventory():
 	inventory.visible = true
 	Inventoryctrl.drawInventory()
 
+
+func dumpForgeItems():
+	var slots = get_tree().get_first_node_in_group("FORGESLOTS")
+	if (slots!= null):
+		for slot in slots.get_children():
+			if slot.slot_info.property["ITEM"] != null:
+				Inventoryctrl.add_item( slot.slot_info.property["ITEM"])
+				slot.set_empty()
+
+				
+			
 func drawInventory():
 	var slots = get_tree().get_first_node_in_group("INVENTORY")
 	var index = 0;
 	if(slots != null):
-		print("IM not null and this is the inventory")
 		for slot in slots.get_children():
 			slot.set_item(Datactrl.inventory[index])
-			print(Datactrl.inventory[index])
 			index+=1
-			
 func updateInventory():
 	var wardrobe = get_tree().get_first_node_in_group("INVENTORY")
 	var index = 0;

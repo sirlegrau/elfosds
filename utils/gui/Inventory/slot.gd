@@ -1,9 +1,9 @@
 extends Control
+class_name Slot
 
 @export_enum("HAT", "WEAPON", "SWEATER", "ANY") var type: String = "ANY"
-
+@export_enum("1","2", "3", "4", "5", "ANY") var level : String ="ANY"
 @onready var slot_info = $icon
-
 
 ###
 @onready var hover = $Hovered
@@ -13,9 +13,9 @@ extends Control
 var inventorySlotPosition = null
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if(hover != null):
+
 		hover.visible = false
-	pass # Replace with function body.
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -25,7 +25,8 @@ func _process(delta: float) -> void:
 func set_empty():
 	slot_info.texture = null
 	slot_info.item = null
-
+	slot_info.property["ITEM"] = null
+	slot_info.property["TEXTURE"] = null
 func set_item(newItem: Item,):
 	if(newItem):
 		slot_info.texture = newItem.texture
@@ -40,13 +41,14 @@ func _get_drag_data(at_position: Vector2) -> Variant:
 	return slot_info
  
 func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
-	return data is TextureRect and ( (self.type == "ANY") or self.type == data.type)
+	return data is TextureRect and ( (self.type == "ANY") or self.type == data.type) and ((self.level == "ANY") or self.level == data.level)
 		
  
 func _drop_data(at_position: Vector2, data: Variant) -> void:
 	var temp = slot_info.property
 	slot_info.property = data.property
 	data.property = temp
+	
 
 func get_preview():
 	var preview_texture = TextureRect.new()

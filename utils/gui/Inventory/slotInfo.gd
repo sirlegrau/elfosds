@@ -1,7 +1,7 @@
 extends TextureRect
 
-@export_enum("HAT", "WEAPON", "SWEATER", "ANY") var type: String
-
+@export_enum("HAT", "WEAPON", "SWEATER") var type: String
+@export_enum("1", "2", "3", "4", "5") var level: String
 @export var item = null :
 	set(value):
 		item = value
@@ -9,6 +9,7 @@ extends TextureRect
 			%Name.text = item.name	
 			%Level.text = "Level : " + str(item.level)
 			type = item.type
+			level = str(item.level)
 		else:
 			%Name.text = ""
 			%Level.text = ""
@@ -23,5 +24,6 @@ extends TextureRect
 											texture = property["TEXTURE"]
 											type = property["SLOT_TYPE"]
 											item = property["ITEM"]
+											
 											
 		

@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://d2vfv3civwu8g" path="res://utils/gui/Inventory/Inventory.tscn" id="4_ivay6"]
 [ext_resource type="PackedScene" uid="uid://c1c2jbb8unjbj" path="res://utils/gui/Wardrobe/Wardrobe.tscn" id="5_2282l"]
 [ext_resource type="PackedScene" uid="uid://bna8yuc5bv0go" path="res://utils/gui/Workbench/Workbench.tscn" id="6_2282l"]
+[ext_resource type="PackedScene" uid="uid://dcf8h5880b8dn" path="res://utils/gui/Forge/Forge.tscn" id="7_gbe1q"]
 
 [node name="GUI" type="Control" unique_id=339585105 groups=["GUI"]]
 layout_mode = 3
@@ -65,3 +66,7 @@ offset_left = -190.0
 offset_top = -48.0
 offset_right = -190.0
 offset_bottom = -48.0
+
+[node name="Forge" parent="." unique_id=450669747 groups=["FORGE"] instance=ExtResource("7_gbe1q")]
+visible = false
+layout_mode = 0

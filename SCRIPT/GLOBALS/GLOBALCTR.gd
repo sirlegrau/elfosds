@@ -62,9 +62,6 @@ func _stopGame():
 		sleepyTimer.stop()
 		for loot in Datactrl.loot:
 			var n = Datactrl.loot[loot]
-			print(str(loot)  + "   " +  str(n))
-		print(Datactrl.inventory)
-		print(Datactrl.wardrobe)
 		Inventoryctrl.drawALL()	
 		###This clears the area array to prevent calculating a freed area
 		InteractionManager.active_areas= []

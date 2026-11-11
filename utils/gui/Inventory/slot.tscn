@@ -22,6 +22,7 @@ layout_mode = 2
 color = Color(0.1728327, 0.17283267, 0.17283267, 1)
 
 [node name="Hovered" type="ColorRect" parent="." unique_id=167049733]
+visible = false
 layout_mode = 2
 offset_transform_enabled = true
 offset_transform_position = Vector2(-30, -30)

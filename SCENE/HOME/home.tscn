@@ -85,8 +85,11 @@ type = "WARDROBE"
 texture = ExtResource("6_7jt04")
 
 [node name="Machine2" parent="." unique_id=1989131176 instance=ExtResource("5_os0d8")]
-position = Vector2(-92, 68)
+position = Vector2(-136, 68)
 type = "WORKBENCH"
+
+[node name="Machine3" parent="." unique_id=740334363 instance=ExtResource("5_os0d8")]
+position = Vector2(-57, 68)
 
 [node name="Door" parent="." unique_id=314007857 instance=ExtResource("7_dwmyk")]
 position = Vector2(144, 64)

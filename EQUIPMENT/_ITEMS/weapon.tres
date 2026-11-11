@@ -10,6 +10,6 @@ script = ExtResource("3_jxmbe")
 name = "weapon"
 scene = ExtResource("2_lu711")
 texture = ExtResource("4_lu711")
-cost = Array[Array]([[ExtResource("1_3k2v3")]])
+cost = Array[Array]([[ExtResource("1_3k2v3"), 3]])
 type = "WEAPON"
 metadata/_custom_type_script = "uid://bxe1mllb5j38i"

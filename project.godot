@@ -52,6 +52,11 @@ CanInteract=""
 Loot="used to clear the floor on descension"
 GUI="find the node and add childs"
 ItemButton="groups all buttons "
+WARDROBE=""
+INVENTORY=""
+WORKBENCH=""
+FORGE="used to reference forge hud"
+FORGESLOTS="ITERATE OVER TO GET LEFT ITEMS FROM FORGE"
 
 [input]
 

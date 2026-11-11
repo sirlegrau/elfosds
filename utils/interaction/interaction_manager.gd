@@ -12,7 +12,7 @@ var can_interact = true
 
 func register_area(area: InteractionArea):
 	active_areas.push_back(area)
-	print(active_areas)
+
 
 	
 func unregister_area(area: InteractionArea):
@@ -49,7 +49,6 @@ func _input(event):
 	if event.is_action_pressed("interact") && can_interact:
 		if active_areas.size() > 0:
 			can_interact = false
-			print("DING DING")
 			label.hide()
 			await active_areas[0].interact.call()
 			can_interact = true

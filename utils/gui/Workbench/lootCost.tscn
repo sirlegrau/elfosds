@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://eh30squ6hgdc"]
+
+[ext_resource type="Script" uid="uid://x26gndvhpk21" path="res://utils/gui/Workbench/loot_cost.gd" id="1_sqbtp"]
+
+[node name="LootCost" type="Control" unique_id=1573933807]
+custom_minimum_size = Vector2(40, 20)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 63.0
+offset_bottom = 20.0
+script = ExtResource("1_sqbtp")
+
+[node name="icon" type="TextureRect" parent="." unique_id=145102831]
+texture_filter = 1
+custom_maximum_size = Vector2(20, 20)
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 20.0
+expand_mode = 2
+
+[node name="cost" type="Label" parent="." unique_id=884753549]
+layout_mode = 0
+offset_left = 25.0
+offset_top = -2.0
+offset_right = 43.0
+offset_bottom = 21.0
+size_flags_horizontal = 8
+text = "5"
+ellipsis_char = ""
+
+[node name="cost2" type="Label" parent="." unique_id=1065525751]
+layout_mode = 0
+offset_left = 18.0
+offset_top = -3.0
+offset_right = 36.0
+offset_bottom = 20.0
+size_flags_horizontal = 8
+text = ":"
+ellipsis_char = ""
