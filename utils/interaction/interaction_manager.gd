@@ -9,8 +9,11 @@ var active_areas= []
 var can_interact = true
 
 
+
 func register_area(area: InteractionArea):
 	active_areas.push_back(area)
+
+
 	
 func unregister_area(area: InteractionArea):
 	var index = active_areas.find(area)
@@ -22,16 +25,16 @@ func _process(delta):
 	#
 	# Invalid access to property or key 'global_position' 
 	# on a base object of type 'previously freed'.
-	if player == null: player = get_tree().get_first_node_in_group("Player")
-	
-	if active_areas.size() > 0 && can_interact:
+	if player == null: player = get_tree().get_first_node_in_group("CanInteract")
+	if active_areas.size() > 0 && can_interact && player!= null:
 		active_areas.sort_custom(_sort_by_distance_to_player)
 		# Labels format
-		label.text = base_text + active_areas[0].action_name
-		label.global_position = active_areas[0].global_position
-		label.global_position.y -= 36
-		label.global_position.x -= label.size.x / 2
-		label.show()
+		if(active_areas[0] != null):
+			label.text = base_text + active_areas[0].action_name
+			label.global_position = active_areas[0].global_position
+			label.global_position.y -= 36
+			label.global_position.x -= label.size.x / 2
+			label.show()
 	else:
 		label.hide()
 
@@ -41,12 +44,11 @@ func _sort_by_distance_to_player(area1,area2):
 	var area2_to_player = player.global_position.distance_to(area2.global_position)
 	return area1_to_player < area2_to_player
 
+	
 func _input(event):
 	if event.is_action_pressed("interact") && can_interact:
 		if active_areas.size() > 0:
 			can_interact = false
 			label.hide()
-			
 			await active_areas[0].interact.call()
-			
 			can_interact = true

@@ -1,4 +1,4 @@
-class_name Item
+class_name Loot
 extends Resource
 
 @export var name:String

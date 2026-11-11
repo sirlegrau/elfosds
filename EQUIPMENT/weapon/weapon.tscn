@@ -14,8 +14,8 @@ _data = {
 }
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_am8f8"]
-a = Vector2(0, 3)
-b = Vector2(8, -4)
+a = Vector2(1, 3)
+b = Vector2(8, -3)
 
 [node name="weapon" type="Sprite2D" unique_id=210927100]
 texture_filter = 1
@@ -34,7 +34,7 @@ position = Vector2(15, -17)
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="weapon_hurtbox" unique_id=952978903]
-position = Vector2(-9, 8)
+position = Vector2(-10, 8)
 shape = SubResource("SegmentShape2D_am8f8")
 
 [connection signal="body_entered" from="weapon_hurtbox" to="." method="_on_weapon_hurtbox_body_entered"]

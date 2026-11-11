@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://cy32gveu217fm"]
+
+[ext_resource type="Resource" uid="uid://cod277w75m44m" path="res://LOOT/silk.tres" id="1_3k2v3"]
+[ext_resource type="PackedScene" uid="uid://xwvcq50dp2e0" path="res://EQUIPMENT/weapon/weapon.tscn" id="2_lu711"]
+[ext_resource type="Script" uid="uid://bxe1mllb5j38i" path="res://EQUIPMENT/_ITEMS/item.gd" id="3_jxmbe"]
+[ext_resource type="Texture2D" uid="uid://cwna2vvoacl1u" path="res://EQUIPMENT/weapon/weapon.png" id="4_lu711"]
+
+[resource]
+script = ExtResource("3_jxmbe")
+name = "weapon"
+scene = ExtResource("2_lu711")
+texture = ExtResource("4_lu711")
+cost = Array[Array]([[ExtResource("1_3k2v3"), 3]])
+type = "WEAPON"
+metadata/_custom_type_script = "uid://bxe1mllb5j38i"

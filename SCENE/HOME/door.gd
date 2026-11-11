@@ -7,4 +7,3 @@ func _ready() -> void:
 func _openDoor():
 	player.remove_from_group("Player")
 	Globalctr._startGame()
-	print("knook knook")

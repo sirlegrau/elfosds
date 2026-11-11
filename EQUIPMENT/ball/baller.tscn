@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://nyhn5n17nnfp"]
 
+[ext_resource type="Texture2D" uid="uid://w3c4qtogqq4a" path="res://SPRITE/ItemBaller.png" id="1_e5dj4"]
 [ext_resource type="Script" uid="uid://1madf7wnm68i" path="res://EQUIPMENT/ball/baller.gd" id="1_misj0"]
 
 [node name="Baller" type="Sprite2D" unique_id=1406802906]
+texture = ExtResource("1_e5dj4")
 script = ExtResource("1_misj0")
 
 [node name="ballerCD" type="Timer" parent="." unique_id=225250742]

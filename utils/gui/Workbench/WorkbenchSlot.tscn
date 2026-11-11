@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dfkj06tbmxgi"]
+
+[ext_resource type="Script" uid="uid://cujkhkhi8shen" path="res://utils/gui/Workbench/workbench_slot.gd" id="1_ktati"]
+
+[node name="WorkbenchSlot" type="PanelContainer" unique_id=1899257801]
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("1_ktati")
+
+[node name="Button" type="Button" parent="." unique_id=1442838189]
+texture_filter = 1
+layout_mode = 2
+theme_type_variation = &"FlatButton"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

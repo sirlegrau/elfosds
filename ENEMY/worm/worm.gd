@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 
-@export var loot:Item
-@export var experience:Item
+@export var loot:Loot
+@export var experience:Loot
 @export var totalHP = 5
 var hp = totalHP;
 @export var dropChancePercent=15;

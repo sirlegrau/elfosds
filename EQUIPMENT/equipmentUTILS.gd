@@ -18,7 +18,8 @@ func getClosestEnemy() -> CharacterBody2D:
 				
 	return closest
 	
-#GETS ROTATION AND TRANSFORMS IT TO VECTOR2
+#GETS- ROTATION AND TRANSFORMS IT TO VECTOR2
+@warning_ignore("shadowed_variable_base_class")
 func rotation_to_direction(rotation_degrees: float) -> Vector2:
 	var rotation_radians = deg_to_rad(rotation_degrees)
 	var direction = Vector2(cos(rotation_radians), sin(rotation_radians))

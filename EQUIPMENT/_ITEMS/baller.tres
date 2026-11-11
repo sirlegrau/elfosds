@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://ch5jo3ml0ltod"]
+
+[ext_resource type="Resource" uid="uid://cod277w75m44m" path="res://LOOT/silk.tres" id="1_3mc2v"]
+[ext_resource type="Script" uid="uid://bxe1mllb5j38i" path="res://EQUIPMENT/_ITEMS/item.gd" id="1_31ssc"]
+[ext_resource type="PackedScene" uid="uid://nyhn5n17nnfp" path="res://EQUIPMENT/ball/baller.tscn" id="1_b3tum"]
+[ext_resource type="Resource" uid="uid://gulxofp4ridf" path="res://LOOT/honey.tres" id="2_omnba"]
+[ext_resource type="Texture2D" uid="uid://w3c4qtogqq4a" path="res://SPRITE/ItemBaller.png" id="3_b3tum"]
+
+[resource]
+script = ExtResource("1_31ssc")
+name = "baller"
+scene = ExtResource("1_b3tum")
+texture = ExtResource("3_b3tum")
+cost = Array[Array]([[ExtResource("1_3mc2v"), 1], [ExtResource("2_omnba"), 1]])
+type = "WEAPON"
+metadata/_custom_type_script = "uid://bxe1mllb5j38i"

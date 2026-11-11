@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://bna8yuc5bv0go"]
+
+[ext_resource type="PackedScene" uid="uid://dfkj06tbmxgi" path="res://utils/gui/Workbench/WorkbenchSlot.tscn" id="1_foh5x"]
+[ext_resource type="Script" uid="uid://oyjus112dgve" path="res://utils/gui/Workbench/workbench.gd" id="1_owgom"]
+[ext_resource type="Resource" uid="uid://ch5jo3ml0ltod" path="res://EQUIPMENT/_ITEMS/baller.tres" id="3_y801u"]
+[ext_resource type="Resource" uid="uid://cy32gveu217fm" path="res://EQUIPMENT/_ITEMS/weapon.tres" id="4_5n3p0"]
+[ext_resource type="Texture2D" uid="uid://cwh47x4l33g6x" path="res://SPRITE/exp.png" id="6_6yqux"]
+
+[node name="Workbench" type="Control" unique_id=405917587]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_owgom")
+
+[node name="WorkbenchSlot" parent="." unique_id=1899257801 instance=ExtResource("1_foh5x")]
+layout_mode = 0
+item = ExtResource("3_y801u")
+
+[node name="WorkbenchSlot2" parent="." unique_id=1159912843 instance=ExtResource("1_foh5x")]
+layout_mode = 0
+offset_left = 32.0
+offset_right = 40.0
+item = ExtResource("4_5n3p0")
+
+[node name="costGrid" type="GridContainer" parent="." unique_id=1315119166]
+custom_maximum_size = Vector2(40, 20)
+layout_mode = 0
+offset_left = 26.0
+offset_top = 44.0
+offset_right = 66.0
+offset_bottom = 64.0
+columns = 3
+
+[node name="canCraft" type="Button" parent="." unique_id=1510252195]
+layout_mode = 0
+offset_left = 175.0
+offset_top = 83.0
+offset_right = 222.0
+offset_bottom = 114.0
+text = "Craft"
+
+[node name="Control" type="Control" parent="." unique_id=521098410]
+anchors_preset = 0
+offset_left = 181.0
+offset_top = 64.0
+offset_right = 221.0
+offset_bottom = 82.0
+
+[node name="xmasicon" type="TextureRect" parent="Control" unique_id=2077055022]
+texture_filter = 1
+custom_maximum_size = Vector2(20, 20)
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("6_6yqux")
+expand_mode = 2
+
+[node name="xmascost" type="Label" parent="Control" unique_id=1398986595]
+layout_mode = 0
+offset_left = 25.0
+offset_top = -2.0
+offset_right = 43.0
+offset_bottom = 21.0
+size_flags_horizontal = 8
+text = "5"
+ellipsis_char = ""
+
+[node name="cost2" type="Label" parent="Control" unique_id=393453131]
+layout_mode = 0
+offset_left = 18.0
+offset_top = -3.0
+offset_right = 36.0
+offset_bottom = 20.0
+size_flags_horizontal = 8
+text = ":"
+ellipsis_char = ""
+
+[connection signal="pressed" from="canCraft" to="." method="_on_can_craft_pressed"]

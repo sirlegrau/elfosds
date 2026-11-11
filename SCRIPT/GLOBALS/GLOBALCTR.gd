@@ -1,27 +1,24 @@
 extends Node
 
 @onready var world = $"../World";
-@onready var player = $"../World/LEVEL/Player";
-@onready var level = $"../World/level"
+@onready var level = null;
 @onready var home = $"../World/home"
+@onready var camera = $"../World/home"
 
-
-var initialSleepyTime=15
-var sleepyTime = 15;
+var initialSleepyTime= Datactrl.sleepyTime
+var sleepyTime = Datactrl.sleepyTime;
 @onready var sleepyTimer = $"../World/SleepyTime"
 
 var newlevel = preload("res://SCENE/level.tscn")
-var nhome = preload("res://SCENE/home.tscn")
+var nhome = preload("res://SCENE/HOME/home.tscn")
+var item = load("res://EQUIPMENT/_ITEMS/baller.tres")
 
 ## GLOBAL 🌍🌍 VARIABLES ##
-var xmas = 0;
 var canEnter = false;
 
 ## LEVEL 🔫🔫 VARIABLES ##
-var playerHP = 3;
-var levelSpeed = 0.03;
 var sleepy = false;
-
+var justone = true
 func _ready() 	-> void:
 	#home.queue_free()
 	pass
@@ -32,8 +29,14 @@ func _process(delta: float) -> void:
 	else:
 		sleepyTime = initialSleepyTime
 	_stopGame()
-
+	if Input.is_action_pressed("getweapon") && justone:
+		justone = false
+		Inventoryctrl.add_item(item)
+		
 func _startGame():
+	Inventoryctrl.updateInventory()
+	Inventoryctrl.updateWardrobe()
+	print(Datactrl.inventory)
 	home = $"../World/home"
 	home.queue_free();
 
@@ -42,29 +45,31 @@ func _startGame():
 	var new = newlevel.instantiate();
 	world.add_child(new)
 	level = $"../World/LEVEL"
-	player = $"../World/Player";
 	sleepy = false
 	sleepyTimer.start(sleepyTime)
 	
 func _stopGame():
-	if sleepy == true || playerHP <= 0:
-		print("ESTOY AQUI PLAYER HP SHOULD BE 3")
-		Globalctr.playerHP = 3;
-		print(playerHP)
+	if sleepy == true || Datactrl.playerHP <= 0:
+		Datactrl.playerHP = 3;
 		level = $"../World/LEVEL"
 		if is_instance_valid(level):
-			playerHP = 3;
 			level.queue_free()
-			
 			var newhome = nhome.instantiate();
 			world.add_child(newhome);
+			
 			home = $"../World/home"
-			
-			
 			sleepy = false
-		self.playerHP = 3;
+			
 		sleepyTimer.stop()
-
+		for loot in Datactrl.loot:
+			var n = Datactrl.loot[loot]
+		Inventoryctrl.updateInventory()
+		Inventoryctrl.updateWardrobe()
+		
+		###This clears the area array to prevent calculating a freed area
+		InteractionManager.active_areas= []
 func _on_sleepy_time_timeout() -> void:
-	print_debug("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASFDGASDFGASDGASD")
 	sleepy = true
+	
+func _update_Inventory():
+	pass
