@@ -1,8 +1,8 @@
-[gd_scene format=3 uid="uid://brse3y71nsu6b"]
+[gd_scene format=3 uid="uid://by3qmveyd6mtk"]
 
-[ext_resource type="Script" uid="uid://6cyk01ffadlu" path="res://moveToFix/main_menu.gd" id="1_06t4h"]
-[ext_resource type="AudioStream" uid="uid://dru7io3a5bd15" path="res://moveToFix/Im a Gnome meme sound effect woo [KnHmoA6Op1o].mp3" id="2_7vrkn"]
-[ext_resource type="PackedScene" uid="uid://cal833fjwk5aw" path="res://moveToFix/advent_calendar.tscn" id="3_fu7sn"]
+[ext_resource type="Script" uid="uid://6cyk01ffadlu" path="res://utils/mainMenu/main_menu.gd" id="1_06t4h"]
+[ext_resource type="AudioStream" uid="uid://dru7io3a5bd15" path="res://SFX/woo.mp3" id="2_7vrkn"]
+[ext_resource type="PackedScene" uid="uid://cal833fjwk5aw" path="res://utils/mainMenu/advent_calendar.tscn" id="3_fu7sn"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0o4t1"]
 
@@ -37,11 +37,6 @@ script = ExtResource("1_06t4h")
 
 [node name="AdventCalendar" parent="." unique_id=32563258 instance=ExtResource("3_fu7sn")]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.028103044
-anchor_top = 0.04375
-anchor_right = 1.0281031
-anchor_bottom = 1.04375
 
 [node name="Horizontal" type="HBoxContainer" parent="." unique_id=396310685]
 layout_mode = 1

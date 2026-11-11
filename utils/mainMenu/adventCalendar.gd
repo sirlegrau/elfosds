@@ -2,7 +2,7 @@ extends Control
 
 # Will this work on browser?
 @onready var todayDate = Time.get_datetime_dict_from_system()
-@onready var buttons = preload("res://calendar_piece.tscn")
+@onready var buttons = preload("res://utils/mainMenu/calendar_piece.tscn")
 
 @export var month = 11
 

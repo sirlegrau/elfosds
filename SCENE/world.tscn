@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://spw7af2nhoxa"]
 
 [ext_resource type="Script" uid="uid://b5ey774fa005o" path="res://SCRIPT/GLOBALS/GLOBALCTR.gd" id="1_bsjl8"]
-[ext_resource type="PackedScene" uid="uid://brse3y71nsu6b" path="res://main_menu.tscn" id="2_65l5k"]
+[ext_resource type="PackedScene" uid="uid://by3qmveyd6mtk" path="res://utils/mainMenu/main_menu.tscn" id="2_65l5k"]
 
 [node name="World" type="Node2D" unique_id=688736691]
 script = ExtResource("1_bsjl8")
@@ -10,6 +10,7 @@ script = ExtResource("1_bsjl8")
 custom_minimum_size = Vector2(854, 480)
 offset_right = 854.0
 offset_bottom = 480.0
+scale = Vector2(0.5, 0.5)
 
 [node name="SleepyTime" type="Timer" parent="." unique_id=978309823]
 one_shot = true
