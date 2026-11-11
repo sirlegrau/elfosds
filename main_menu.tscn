@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://6cyk01ffadlu" path="res://main_menu.gd" id="1_06t4h"]
 [ext_resource type="AudioStream" uid="uid://dru7io3a5bd15" path="res://Im a Gnome meme sound effect woo [KnHmoA6Op1o].mp3" id="2_7vrkn"]
+[ext_resource type="PackedScene" uid="uid://cal833fjwk5aw" path="res://advent_calendar.tscn" id="3_fu7sn"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0o4t1"]
 
@@ -33,6 +34,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_06t4h")
+
+[node name="AdventCalendar" parent="." unique_id=32563258 instance=ExtResource("3_fu7sn")]
+layout_mode = 1
 
 [node name="Horizontal" type="HBoxContainer" parent="." unique_id=396310685]
 layout_mode = 1

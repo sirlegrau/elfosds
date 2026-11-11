@@ -20,7 +20,7 @@ func _on_play_pressed() -> void:
 
 
 func _on_label_2_pressed() -> void:
-	if(couentaCDGnomo>=100):
+	if(couentaCDGnomo>=0):
 		print("Cd unlocked")
 		audio_stream_player_2d.play()
 	else:
