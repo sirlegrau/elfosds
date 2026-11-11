@@ -4,6 +4,7 @@ extends Node
 @onready var level = null;
 @onready var home = $"../World/home"
 @onready var camera = $"../World/home"
+@onready var menu = $"../MainMenu"
 
 var initialSleepyTime= Datactrl.sleepyTime
 var sleepyTime = Datactrl.sleepyTime;
@@ -33,6 +34,12 @@ func _process(delta: float) -> void:
 		justone = false
 		Inventoryctrl.add_item(item)
 		
+func _launchGameTheGameGameNotTheBrotatoOne():
+	var newhome = nhome.instantiate();
+	world.add_child(newhome);
+	home = $"../World/home"
+	sleepy = false
+
 func _startGame():
 	Inventoryctrl.updateInventory()
 	Inventoryctrl.updateWardrobe()
