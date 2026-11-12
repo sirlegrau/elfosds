@@ -97,16 +97,18 @@ func dumpForgeItems():
 			
 func drawInventory():
 	var slots = get_tree().get_first_node_in_group("INVENTORY")
+	slots = slots.get_child(0)
 	var index = 0;
 	if(slots != null):
 		for slot in slots.get_children():
 			slot.set_item(Datactrl.inventory[index])
 			index+=1
 func updateInventory():
-	var wardrobe = get_tree().get_first_node_in_group("INVENTORY")
+	var slots = get_tree().get_first_node_in_group("INVENTORY")
+	slots = slots.get_child(0)
 	var index = 0;
-	if(wardrobe != null):
-		for slot in wardrobe.get_children():
+	if(slots != null):
+		for slot in slots.get_children():
 			Datactrl.inventory[index] = slot.slot_info.item
 			index+=1
 

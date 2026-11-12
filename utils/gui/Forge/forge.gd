@@ -62,4 +62,6 @@ func _on_can_craft_pressed() -> void:
 		slot.set_empty()
 	Datactrl.timesbought["FORGE"] += 1
 	displayXMAS()
+	slot1.visible = false
+	slot2.visible = false
 	pass # Replace with function body.

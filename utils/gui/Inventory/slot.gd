@@ -5,7 +5,9 @@ class_name Slot
 @export_enum("1","2", "3", "4", "5", "ANY") var level : String ="ANY"
 @onready var slot_info = $icon
 
+
 ###
+@onready var levelborder=$levelborder
 @onready var hover = $Hovered
 @onready var hoverName = $Hovered/Name
 @onready var hoverLevel = $Hovered/Level
@@ -13,7 +15,7 @@ class_name Slot
 var inventorySlotPosition = null
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-
+		%levelborder.modulate = Color(0.82, 0.871, 0.871, 1.0)
 		hover.visible = false
 
 
@@ -56,6 +58,7 @@ func get_preview():
 	preview_texture.expand_mode = 1
 	preview_texture.size = Vector2(25,25)
 	preview_texture.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
+	preview_texture.z_index = 101
 	var preview = Control.new()
 	preview.add_child(preview_texture)
 	return preview

@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://oyjus112dgve" path="res://utils/gui/Workbench/workbench.gd" id="1_owgom"]
 [ext_resource type="Resource" uid="uid://ch5jo3ml0ltod" path="res://EQUIPMENT/_ITEMS/baller.tres" id="3_y801u"]
 [ext_resource type="Resource" uid="uid://cy32gveu217fm" path="res://EQUIPMENT/_ITEMS/weapon.tres" id="4_5n3p0"]
+[ext_resource type="Texture2D" uid="uid://b18nhi3fnap8x" path="res://SPRITE/workbenchbk.png" id="6_5jp0w"]
 [ext_resource type="Texture2D" uid="uid://cwh47x4l33g6x" path="res://SPRITE/exp.png" id="6_6yqux"]
 
 [node name="Workbench" type="Control" unique_id=405917587]
@@ -11,14 +12,25 @@ layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_owgom")
 
+[node name="bk" type="TextureRect" parent="." unique_id=1107254738]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 5.0
+offset_right = 229.0
+offset_bottom = 159.0
+texture = ExtResource("6_5jp0w")
+
 [node name="WorkbenchSlot" parent="." unique_id=1899257801 instance=ExtResource("1_foh5x")]
 layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
 item = ExtResource("3_y801u")
 
 [node name="WorkbenchSlot2" parent="." unique_id=1159912843 instance=ExtResource("1_foh5x")]
 layout_mode = 0
 offset_left = 32.0
 offset_right = 40.0
+offset_bottom = 32.0
 item = ExtResource("4_5n3p0")
 
 [node name="costGrid" type="GridContainer" parent="." unique_id=1315119166]

@@ -8,32 +8,60 @@ anchors_preset = 0
 
 [node name="HAT" parent="." unique_id=750758387 instance=ExtResource("2_jva2k")]
 layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
 offset_left = -57.0
 offset_top = -56.0
 offset_right = -17.0
 offset_bottom = -16.0
+grow_horizontal = 1
+grow_vertical = 1
 type = "HAT"
 
 [node name="SWEATER" parent="." unique_id=685778330 instance=ExtResource("2_jva2k")]
 layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
 offset_left = -60.0
 offset_top = -3.0
 offset_right = -20.0
 offset_bottom = 37.0
+grow_horizontal = 1
+grow_vertical = 1
 type = "SWEATER"
 
 [node name="WEAPON" parent="." unique_id=320266591 instance=ExtResource("2_jva2k")]
 layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
 offset_left = -30.0
 offset_top = 58.0
 offset_right = 10.0
 offset_bottom = 98.0
+grow_horizontal = 1
+grow_vertical = 1
 type = "WEAPON"
 
 [node name="WEAPON2" parent="." unique_id=1635048085 instance=ExtResource("2_jva2k")]
 layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
 offset_left = -84.0
 offset_top = 58.0
 offset_right = -44.0
 offset_bottom = 98.0
+grow_horizontal = 1
+grow_vertical = 1
 type = "WEAPON"

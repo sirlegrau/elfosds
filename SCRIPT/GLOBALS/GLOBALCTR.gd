@@ -2,9 +2,8 @@ extends Node
 
 @onready var world = $"../World";
 @onready var level = null;
-@onready var home = $"../World/home"
-@onready var camera = $"../World/home"
-@onready var menu = $"../MainMenu"
+var home = null
+
 
 var initialSleepyTime= Datactrl.sleepyTime
 var sleepyTime = Datactrl.sleepyTime;

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Item" format=3 uid="uid://cod277w75m44m"]
+[gd_resource type="Resource" script_class="Loot" format=3 uid="uid://cod277w75m44m"]
 
 [ext_resource type="PackedScene" uid="uid://dxwfruc28ai0y" path="res://SCENE/loot.tscn" id="1_n3erh"]
 [ext_resource type="Script" uid="uid://c0tl0r8iuijjt" path="res://LOOT/loot.gd" id="2_vou8a"]

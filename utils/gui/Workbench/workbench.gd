@@ -26,13 +26,12 @@ func _workbenchItemPressed(item:Item):
 	
 	clearCostGrid()
 	selectedItem = item
-	
 	### cost is an Array with [Loot, int]
 	for cost in selectedItem.cost:
 		displayCost(cost)
 		
 	displayXMAS()
-	
+	checkFullInventory()
 	
 func checkCost(cost:Array):
 	var costName = cost[0].name
@@ -76,6 +75,8 @@ func _on_can_craft_pressed() -> void:
 	Datactrl.timesbought[selectedItem.name] += 1
 	Datactrl.timesbought["WORKBENCH"] +=1
 	_workbenchItemPressed(selectedItem)
+	checkFullInventory()
+	
 
 
 func payLoot() :
@@ -88,4 +89,13 @@ func payLoot() :
 	var currentCost = int(((timesUSED*timesUSED)+timesUSED)/2)+1
 	Datactrl.loot["exp"] -= currentCost
 	
-	
+func checkFullInventory():
+	var invFUll = true
+	canCraft.disabled = true
+	print(Datactrl.inventory)
+	for item in Datactrl.inventory:
+		if item == null:
+			invFUll = false
+	if(invFUll == false):
+		canCraft.disabled = false
+	##TO DO display inventory is full!!!!

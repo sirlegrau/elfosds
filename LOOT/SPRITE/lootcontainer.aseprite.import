@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://b0sl2flssxoqt"
+path="res://.godot/imported/lootcontainer.aseprite-6c8ddd42556a950f777451679152b19f.res"
+
+[deps]
+
+source_file="res://LOOT/SPRITE/lootcontainer.aseprite"
+dest_files=["res://.godot/imported/lootcontainer.aseprite-6c8ddd42556a950f777451679152b19f.res"]
+
+[params]
+

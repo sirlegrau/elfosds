@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://drglvbxrpvuih" path="res://utils/gui/gui.gd" id="1_o8lp3"]
 [ext_resource type="Texture2D" uid="uid://cs0ekacdm1c5u" path="res://SPRITE/sand.png" id="2_alkxk"]
+[ext_resource type="Texture2D" uid="uid://gdg7ay110sgc" path="res://SPRITE/hp.png" id="2_i27gs"]
 [ext_resource type="Texture2D" uid="uid://xmy8rnn0rmk4" path="res://SPRITE/HUD.png" id="3_ivay6"]
 [ext_resource type="PackedScene" uid="uid://d2vfv3civwu8g" path="res://utils/gui/Inventory/Inventory.tscn" id="4_ivay6"]
 [ext_resource type="PackedScene" uid="uid://c1c2jbb8unjbj" path="res://utils/gui/Wardrobe/Wardrobe.tscn" id="5_2282l"]
@@ -14,8 +15,20 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_o8lp3")
+hpTexture = ExtResource("2_i27gs")
+
+[node name="hpcontainer" type="GridContainer" parent="." unique_id=1914197700]
+z_index = 1
+custom_maximum_size = Vector2(96, 16)
+layout_mode = 0
+offset_left = -200.0
+offset_top = -111.0
+offset_right = -184.0
+offset_bottom = -95.0
+columns = 6
 
 [node name="hp" type="Label" parent="." unique_id=1082387286]
+visible = false
 z_index = 1
 layout_mode = 0
 offset_left = -185.0
@@ -49,6 +62,7 @@ texture = ExtResource("2_alkxk")
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1073610445]
 texture_filter = 1
+position = Vector2(0, -104)
 texture = ExtResource("3_ivay6")
 
 [node name="inventory" parent="." unique_id=1141822235 instance=ExtResource("4_ivay6")]

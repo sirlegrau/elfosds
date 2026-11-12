@@ -1,5 +1,6 @@
 extends Node2D
 
+var weapon = load("res://EQUIPMENT/_ITEMS/weapon.tres")
 ### THIS INT HOLD PLAYER TOTAL HP
 var playerHP = 3;
 
@@ -9,9 +10,9 @@ var sleepyTime = 15;
 ### THIS DICTIONARY HOLDS PLAYER CURRENT ITEMS  
 var loot ={
 	### TO BE RENAMED XMAS
-	"exp" : 51,
-	"silk" : 31,
-	"honey" :1
+	"exp" : 4000,
+	"silk" : 4000,
+	"honey" :4000
 }
 
 ### THIS ARRAY HOLDS PLAYER INVENTORY USED ACROSS ALL MACHINES

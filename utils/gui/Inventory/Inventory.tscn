@@ -1,91 +1,197 @@
 [gd_scene format=3 uid="uid://d2vfv3civwu8g"]
 
+[ext_resource type="Texture2D" uid="uid://d1264p17tav81" path="res://SPRITE/inventorybk.png" id="2_dc3po"]
 [ext_resource type="PackedScene" uid="uid://yavxnpbh4qqf" path="res://utils/gui/Inventory/slot.tscn" id="2_n731g"]
+[ext_resource type="Texture2D" uid="uid://cd58b7f2i81p4" path="res://LOOT/SPRITE/lootcontainer.png" id="3_dc3po"]
 
 [node name="inventory" type="Control" unique_id=1141822235 groups=["INVENTORY"]]
 layout_mode = 3
 anchors_preset = 0
 
-[node name="slot" parent="." unique_id=750758387 instance=ExtResource("2_n731g")]
-layout_mode = 0
-offset_left = 63.0
-offset_top = -73.0
-offset_right = 103.0
-offset_bottom = -33.0
+[node name="inventorySlots" type="Control" parent="." unique_id=1404952362]
+anchors_preset = 0
+offset_left = 1.0
+offset_top = 10.0
+offset_right = 41.0
+offset_bottom = 50.0
 
-[node name="slot2" parent="." unique_id=1970039204 instance=ExtResource("2_n731g")]
+[node name="slot" parent="inventorySlots" unique_id=750758387 instance=ExtResource("2_n731g")]
 layout_mode = 0
-offset_left = 109.0
-offset_top = -72.0
-offset_right = 149.0
-offset_bottom = -32.0
-
-[node name="slot3" parent="." unique_id=881313421 instance=ExtResource("2_n731g")]
-layout_mode = 0
-offset_left = 157.0
-offset_top = -73.0
-offset_right = 197.0
-offset_bottom = -33.0
-
-[node name="slot4" parent="." unique_id=1017405412 instance=ExtResource("2_n731g")]
-layout_mode = 0
-offset_left = 61.0
-offset_top = -25.0
-offset_right = 101.0
-offset_bottom = 15.0
-
-[node name="slot5" parent="." unique_id=584788016 instance=ExtResource("2_n731g")]
-layout_mode = 0
-offset_left = 107.0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 51.0
 offset_top = -24.0
-offset_right = 147.0
-offset_bottom = 16.0
+offset_right = 83.0
+offset_bottom = 8.0
+grow_horizontal = 1
+grow_vertical = 1
 
-[node name="slot6" parent="." unique_id=2143647608 instance=ExtResource("2_n731g")]
+[node name="slot2" parent="inventorySlots" unique_id=1545562557 instance=ExtResource("2_n731g")]
 layout_mode = 0
-offset_left = 155.0
-offset_top = -25.0
-offset_right = 195.0
-offset_bottom = 15.0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 86.0
+offset_top = -24.0
+offset_right = 118.0
+offset_bottom = 8.0
+grow_horizontal = 1
+grow_vertical = 1
 
-[node name="slot7" parent="." unique_id=1009984400 instance=ExtResource("2_n731g")]
+[node name="slot3" parent="inventorySlots" unique_id=593945903 instance=ExtResource("2_n731g")]
 layout_mode = 0
-offset_left = 61.0
-offset_top = 21.0
-offset_right = 101.0
-offset_bottom = 61.0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 121.0
+offset_top = -24.0
+offset_right = 153.0
+offset_bottom = 8.0
+grow_horizontal = 1
+grow_vertical = 1
 
-[node name="slot8" parent="." unique_id=898448394 instance=ExtResource("2_n731g")]
+[node name="slot4" parent="inventorySlots" unique_id=321061000 instance=ExtResource("2_n731g")]
 layout_mode = 0
-offset_left = 107.0
-offset_top = 22.0
-offset_right = 147.0
-offset_bottom = 62.0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 156.0
+offset_top = -24.0
+offset_right = 188.0
+offset_bottom = 8.0
+grow_horizontal = 1
+grow_vertical = 1
 
-[node name="slot9" parent="." unique_id=746138418 instance=ExtResource("2_n731g")]
+[node name="slot5" parent="inventorySlots" unique_id=972687318 instance=ExtResource("2_n731g")]
 layout_mode = 0
-offset_left = 155.0
-offset_top = 21.0
-offset_right = 195.0
-offset_bottom = 61.0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 51.0
+offset_top = 11.0
+offset_right = 83.0
+offset_bottom = 43.0
+grow_horizontal = 1
+grow_vertical = 1
 
-[node name="slot10" parent="." unique_id=1191090172 instance=ExtResource("2_n731g")]
+[node name="slot6" parent="inventorySlots" unique_id=1814834008 instance=ExtResource("2_n731g")]
 layout_mode = 0
-offset_left = 59.0
-offset_top = 69.0
-offset_right = 99.0
-offset_bottom = 109.0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 86.0
+offset_top = 11.0
+offset_right = 118.0
+offset_bottom = 43.0
+grow_horizontal = 1
+grow_vertical = 1
 
-[node name="slot11" parent="." unique_id=139559188 instance=ExtResource("2_n731g")]
+[node name="slot7" parent="inventorySlots" unique_id=1098672154 instance=ExtResource("2_n731g")]
 layout_mode = 0
-offset_left = 105.0
-offset_top = 70.0
-offset_right = 145.0
-offset_bottom = 110.0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 121.0
+offset_top = 11.0
+offset_right = 153.0
+offset_bottom = 43.0
+grow_horizontal = 1
+grow_vertical = 1
 
-[node name="slot12" parent="." unique_id=2024246523 instance=ExtResource("2_n731g")]
+[node name="slot8" parent="inventorySlots" unique_id=1368020233 instance=ExtResource("2_n731g")]
 layout_mode = 0
-offset_left = 153.0
-offset_top = 69.0
-offset_right = 193.0
-offset_bottom = 109.0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 156.0
+offset_top = 11.0
+offset_right = 188.0
+offset_bottom = 43.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="slot9" parent="inventorySlots" unique_id=1332875593 instance=ExtResource("2_n731g")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 51.0
+offset_top = 46.0
+offset_right = 83.0
+offset_bottom = 78.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="slot10" parent="inventorySlots" unique_id=478447830 instance=ExtResource("2_n731g")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 86.0
+offset_top = 46.0
+offset_right = 118.0
+offset_bottom = 78.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="slot11" parent="inventorySlots" unique_id=1578210439 instance=ExtResource("2_n731g")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 121.0
+offset_top = 46.0
+offset_right = 153.0
+offset_bottom = 78.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="slot12" parent="inventorySlots" unique_id=21776604 instance=ExtResource("2_n731g")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 156.0
+offset_top = 46.0
+offset_right = 188.0
+offset_bottom = 78.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="inventorybk" type="Sprite2D" parent="." unique_id=2071453786]
+position = Vector2(119, 37)
+texture = ExtResource("2_dc3po")
+
+[node name="lootcontainer" type="Control" parent="." unique_id=1715020600]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="bk" type="Sprite2D" parent="lootcontainer" unique_id=1307014741]
+position = Vector2(0, -89)
+texture = ExtResource("3_dc3po")

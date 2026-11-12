@@ -1,13 +1,27 @@
 [gd_scene format=3 uid="uid://dfkj06tbmxgi"]
 
 [ext_resource type="Script" uid="uid://cujkhkhi8shen" path="res://utils/gui/Workbench/workbench_slot.gd" id="1_ktati"]
+[ext_resource type="Texture2D" uid="uid://bsv3j8chonnwj" path="res://SPRITE/slotbk.png" id="2_ktati"]
 
 [node name="WorkbenchSlot" type="PanelContainer" unique_id=1899257801]
+z_index = 100
+custom_minimum_size = Vector2(32, 32)
+custom_maximum_size = Vector2(32, 32)
 offset_right = 8.0
 offset_bottom = 8.0
 script = ExtResource("1_ktati")
 
+[node name="OuterBorder" type="TextureRect" parent="." unique_id=1665112437]
+z_index = 101
+texture_filter = 1
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_ktati")
+
 [node name="Button" type="Button" parent="." unique_id=1442838189]
+z_index = 200
 texture_filter = 1
 layout_mode = 2
 theme_type_variation = &"FlatButton"
