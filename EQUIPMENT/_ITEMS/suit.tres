@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://c5ceb2h803jeh"]
+
+[ext_resource type="Resource" uid="uid://cod277w75m44m" path="res://LOOT/silk.tres" id="1_dsnfj"]
+[ext_resource type="Script" uid="uid://bxe1mllb5j38i" path="res://EQUIPMENT/_ITEMS/item.gd" id="1_y02qp"]
+[ext_resource type="PackedScene" uid="uid://ck7u1xw5x1kva" path="res://EQUIPMENT/_ITEMS/clothe.tscn" id="2_l05qs"]
+[ext_resource type="Texture2D" uid="uid://cu7cp45qon34u" path="res://EQUIPMENT/suit.png" id="4_l05qs"]
+
+[resource]
+script = ExtResource("1_y02qp")
+name = "suit"
+scene = ExtResource("2_l05qs")
+texture = ExtResource("4_l05qs")
+cost = Array[Array]([[ExtResource("1_dsnfj"), 3]])
+type = "SWEATER"
+metadata/_custom_type_script = "uid://bxe1mllb5j38i"

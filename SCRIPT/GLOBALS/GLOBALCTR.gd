@@ -15,7 +15,7 @@ var item = load("res://EQUIPMENT/_ITEMS/baller.tres")
 
 ## GLOBAL 🌍🌍 VARIABLES ##
 var canEnter = false;
-var ingame = false
+
 ## LEVEL 🔫🔫 VARIABLES ##
 var sleepy = false;
 var justone = true
@@ -38,7 +38,7 @@ func _launchGameTheGameGameNotTheBrotatoOne():
 	world.add_child(newhome);
 	home = $"../World/home"
 	sleepy = false
-	ingame = false
+
 	
 func _startGame():
 	Inventoryctrl.updateInventory()
@@ -46,7 +46,7 @@ func _startGame():
 	print(Datactrl.inventory)
 	home = $"../World/home"
 	home.queue_free();
-	ingame = true
+	
 	Levelctrl.descend= false
 	Levelctrl.nLevel=0;
 	var new = newlevel.instantiate();
@@ -54,10 +54,10 @@ func _startGame():
 	level = $"../World/LEVEL"
 	sleepy = false
 	sleepyTimer.start(sleepyTime)
-	
+	InteractionManager.active_areas= []
 func _stopGame():
 	if sleepy == true || Datactrl.playerHP <= 0:
-		ingame = false
+
 		Datactrl.playerHP = 3;
 		level = $"../World/LEVEL"
 		if is_instance_valid(level):
@@ -74,7 +74,7 @@ func _stopGame():
 		
 		###This clears the area array to prevent calculating a freed area
 		InteractionManager.active_areas= []
-		ingame = false
+		
 func _on_sleepy_time_timeout() -> void:
 	sleepy = true
 	

@@ -10,6 +10,8 @@ func _ready() -> void:
 		if item != null:
 			var itemInstance = item.scene.instantiate()
 			itemInstance.position = self.position
+			if item.name == "suit":
+				itemInstance.position.y +=7
 			self.add_child(itemInstance);
 	pass # Replace with function body.
 

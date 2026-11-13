@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://cy32gveu217fm" path="res://EQUIPMENT/_ITEMS/weapon.tres" id="4_5n3p0"]
 [ext_resource type="Texture2D" uid="uid://b18nhi3fnap8x" path="res://LOOT/SPRITE/workbenchbk.png" id="6_5jp0w"]
 [ext_resource type="Texture2D" uid="uid://dwgq8cfo7ropl" path="res://LOOT/SPRITE/lootslot.png" id="6_74irg"]
+[ext_resource type="Resource" uid="uid://c5ceb2h803jeh" path="res://EQUIPMENT/_ITEMS/suit.tres" id="6_f2yo2"]
 [ext_resource type="Texture2D" uid="uid://dlhinwrt8y8a0" path="res://LOOT/SPRITE/xmas7.png" id="7_f2yo2"]
 [ext_resource type="FontFile" uid="uid://b85s646gnxwr6" path="res://LOOT/SPRITE/lootfont.ttf" id="8_cxcjp"]
 
@@ -38,6 +39,14 @@ offset_top = 18.0
 offset_right = 96.0
 offset_bottom = 50.0
 item = ExtResource("4_5n3p0")
+
+[node name="WorkbenchSlot3" parent="." unique_id=935683017 instance=ExtResource("1_foh5x")]
+layout_mode = 0
+offset_left = 99.0
+offset_top = 18.0
+offset_right = 131.0
+offset_bottom = 50.0
+item = ExtResource("6_f2yo2")
 
 [node name="costGrid" type="GridContainer" parent="." unique_id=1315119166]
 custom_maximum_size = Vector2(40, 20)

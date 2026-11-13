@@ -29,6 +29,7 @@ var wardrobe = []
 var timesbought= {
 	"baller" = 0,
 	"weapon" = 0,
+	"suit"= 0,
 	"WORKBENCH"=0,
 	"FORGE"=3
 }

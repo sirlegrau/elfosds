@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://ck7u1xw5x1kva"]
+
+[ext_resource type="Texture2D" uid="uid://cu7cp45qon34u" path="res://EQUIPMENT/suit.png" id="1_lulfi"]
+
+[node name="clothe" type="Sprite2D" unique_id=422764555]
+z_index = 5
+texture = ExtResource("1_lulfi")
