@@ -23,7 +23,7 @@ func _ready() -> void:
 
 func _workbenchItemPressed(item:Item):
 	canCraft.disabled = false
-	
+	checkFullInventory()
 	clearCostGrid()
 	selectedItem = item
 	### cost is an Array with [Loot, int]
@@ -31,7 +31,7 @@ func _workbenchItemPressed(item:Item):
 		displayCost(cost)
 		
 	displayXMAS()
-	checkFullInventory()
+	
 	
 func checkCost(cost:Array):
 	var costName = cost[0].name
@@ -75,9 +75,6 @@ func _on_can_craft_pressed() -> void:
 	Datactrl.timesbought[selectedItem.name] += 1
 	Datactrl.timesbought["WORKBENCH"] +=1
 	_workbenchItemPressed(selectedItem)
-	checkFullInventory()
-	
-
 
 func payLoot() :
 	for cost in selectedItem.cost:

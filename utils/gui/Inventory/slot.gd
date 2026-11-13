@@ -40,6 +40,7 @@ func set_item(newItem: Item,):
 
 func _get_drag_data(at_position: Vector2) -> Variant:
 	set_drag_preview(get_preview())
+	%levelborder.modulate = Color(0.82, 0.871, 0.871, 1.0)
 	return slot_info
  
 func _can_drop_data(at_position: Vector2, data: Variant) -> bool:

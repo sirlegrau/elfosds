@@ -1,67 +1,78 @@
 [gd_scene format=3 uid="uid://c1c2jbb8unjbj"]
 
+[ext_resource type="Texture2D" uid="uid://c7y5ejrj55xhi" path="res://SPRITE/wardrobe.png" id="2_0t62w"]
 [ext_resource type="PackedScene" uid="uid://yavxnpbh4qqf" path="res://utils/gui/Inventory/slot.tscn" id="2_jva2k"]
 
 [node name="wardrobe" type="Control" unique_id=1141822235 groups=["WARDROBE"]]
+z_index = 1
 layout_mode = 3
 anchors_preset = 0
 
-[node name="HAT" parent="." unique_id=750758387 instance=ExtResource("2_jva2k")]
+[node name="Control" type="Control" parent="." unique_id=1519693501]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HAT" parent="Control" unique_id=750758387 instance=ExtResource("2_jva2k")]
 layout_mode = 0
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = -57.0
-offset_top = -56.0
-offset_right = -17.0
-offset_bottom = -16.0
+offset_left = -50.0
+offset_top = -31.0
+offset_right = -18.0
+offset_bottom = 1.0
 grow_horizontal = 1
 grow_vertical = 1
 type = "HAT"
 
-[node name="SWEATER" parent="." unique_id=685778330 instance=ExtResource("2_jva2k")]
+[node name="SWEATER" parent="Control" unique_id=685778330 instance=ExtResource("2_jva2k")]
 layout_mode = 0
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = -60.0
-offset_top = -3.0
-offset_right = -20.0
-offset_bottom = 37.0
+offset_left = -50.0
+offset_top = 14.0
+offset_right = -18.0
+offset_bottom = 46.0
 grow_horizontal = 1
 grow_vertical = 1
 type = "SWEATER"
 
-[node name="WEAPON" parent="." unique_id=320266591 instance=ExtResource("2_jva2k")]
+[node name="WEAPON" parent="Control" unique_id=320266591 instance=ExtResource("2_jva2k")]
 layout_mode = 0
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = -30.0
-offset_top = 58.0
-offset_right = 10.0
-offset_bottom = 98.0
+offset_left = -15.0
+offset_top = 59.0
+offset_right = 17.0
+offset_bottom = 91.0
 grow_horizontal = 1
 grow_vertical = 1
 type = "WEAPON"
 
-[node name="WEAPON2" parent="." unique_id=1635048085 instance=ExtResource("2_jva2k")]
+[node name="WEAPON2" parent="Control" unique_id=1635048085 instance=ExtResource("2_jva2k")]
 layout_mode = 0
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = -84.0
-offset_top = 58.0
-offset_right = -44.0
-offset_bottom = 98.0
+offset_left = -78.0
+offset_top = 59.0
+offset_right = -46.0
+offset_bottom = 91.0
 grow_horizontal = 1
 grow_vertical = 1
 type = "WEAPON"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=210822290]
+position = Vector2(-31, 37)
+texture = ExtResource("2_0t62w")

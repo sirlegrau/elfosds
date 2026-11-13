@@ -12,7 +12,7 @@ var loot ={
 	### TO BE RENAMED XMAS
 	"exp" : 4000,
 	"silk" : 4000,
-	"honey" :4000
+	"honey" :10
 }
 
 ### THIS ARRAY HOLDS PLAYER INVENTORY USED ACROSS ALL MACHINES

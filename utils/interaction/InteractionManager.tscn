@@ -6,7 +6,6 @@
 script = ExtResource("1_75cls")
 
 [node name="Label" type="Label" parent="." unique_id=1551076281]
-z_index = 20
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5

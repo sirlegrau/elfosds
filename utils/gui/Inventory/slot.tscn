@@ -65,7 +65,7 @@ theme_override_font_sizes/font_size = 8
 text = "Level:"
 
 [node name="icon" type="TextureRect" parent="." unique_id=288815899]
-z_index = 100
+z_index = 1000
 custom_minimum_size = Vector2(24, 24)
 custom_maximum_size = Vector2(24, 24)
 layout_mode = 2

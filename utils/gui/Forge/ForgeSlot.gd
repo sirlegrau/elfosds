@@ -12,7 +12,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 func _get_drag_data(at_position: Vector2) -> Variant:
-	set_drag_preview(get_preview())
+	super(at_position)
 	forgeItemRemoved.emit()
 	return slot_info
 	

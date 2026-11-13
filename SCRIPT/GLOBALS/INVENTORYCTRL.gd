@@ -114,6 +114,7 @@ func updateInventory():
 
 func drawWardrobe():
 	var slots = get_tree().get_first_node_in_group("WARDROBE")
+	slots= slots.get_child(0)
 	var index = 0;
 	if(slots != null):
 		for slot in slots.get_children():
@@ -121,6 +122,7 @@ func drawWardrobe():
 			index+=1
 func updateWardrobe():
 	var slots = get_tree().get_first_node_in_group("WARDROBE")
+	slots= slots.get_child(0)
 	var index = 0;
 	if(slots != null):
 		for slot in slots.get_children():
