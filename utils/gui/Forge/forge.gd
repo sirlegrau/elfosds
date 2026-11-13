@@ -40,7 +40,7 @@ func _process(delta: float) -> void:
 
 
 func displayXMAS():
-	var availableXMAS = Datactrl.loot["exp"]
+	var availableXMAS = Datactrl.loot["xmas"]
 	var timesUSED = Datactrl.timesbought["FORGE"]
 	var currentCost = int(((timesUSED*timesUSED)+timesUSED)/2)+1
 	xmas.text = str(currentCost)

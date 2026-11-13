@@ -13,3 +13,6 @@ one_shot = true
 
 [node name="wormTimer" type="Timer" parent="." unique_id=2093421048]
 one_shot = true
+
+[node name="vampireTimer" type="Timer" parent="." unique_id=1926170942]
+one_shot = true

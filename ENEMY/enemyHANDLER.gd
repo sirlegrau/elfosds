@@ -4,11 +4,13 @@ extends Node2D
 @onready var soulTimer = $soulTimer;
 @onready var beeTimer = $beeTimer;
 @onready var wormTimer = $wormTimer;
+@onready var vampireTimer = $vampireTimer;
 
 #ENEMY SCENE PRELOADS
 const SOUL = preload("res://ENEMY/soul/soul.tscn")
 const BEE = preload("res://ENEMY/bee/bee.tscn")
 const WORM = preload("res://ENEMY/worm/worm.tscn")
+const VAMPIRE = preload("res://ENEMY/vampire/vampire.tscn")
 
 #RELATIVE TO -- SOUL -- 
 var soulWaves = 0;
@@ -22,6 +24,10 @@ var beeCD = 10;
 var wormWaves = 0;
 var wormCD = 2;
 
+#RELATIVE TO -- VAMPIRE -- 
+var vampireWaves = 0;
+var vampireCD = 4;
+
 
 
 # Called when the node enters the scene tree for the first time.
@@ -30,14 +36,15 @@ func _ready() -> void:
 	#DEFINE WAVE SIZES
 	match Levelctrl.nLevel:
 		1:
-			wormWaves= 5
+			vampireWaves= 5
+			wormWaves=2
 		2:
 			beeWaves =5
 			wormWaves =2;
 		3:
 			beeWaves = 5;
 	
-	Levelctrl.waves = soulWaves+beeWaves+wormWaves;
+	Levelctrl.waves = soulWaves+beeWaves+wormWaves+vampireWaves
 	pass # Replace with function body.
 
 
@@ -56,6 +63,8 @@ func WAVEhandler() ->void:
 		beeWaves = spawnWithTimer(beeTimer, beeWaves, beeCD, BEE)
 	if(wormTimer.is_stopped() && wormWaves >0):
 		wormWaves = spawnWithTimer(wormTimer, wormWaves, wormCD, WORM)
+	if(vampireTimer.is_stopped() && vampireWaves >0):
+		vampireWaves = spawnWithTimer(vampireTimer, vampireWaves, vampireCD, VAMPIRE)
 		#CHEKS IF ROOM IS CLEAR -- IF WAVES REMAINING IT WILL SPAWN ONE OF EACH
 	elif(get_tree().get_nodes_in_group("enemy").is_empty()):
 		if(soulWaves>0):
@@ -64,6 +73,8 @@ func WAVEhandler() ->void:
 			beeWaves = spawnWithOutTimer(beeWaves, beeCD, BEE)
 		if(soulWaves>0):
 			wormWaves = spawnWithOutTimer(wormWaves, wormCD, WORM)
+		if(vampireWaves>0):
+			vampireWaves = spawnWithOutTimer(vampireWaves, vampireCD, VAMPIRE)
 			
 	#USED BY CONTROLLED TO CHECK IF A ROOM IS CLEARED
 	Levelctrl.waves = soulWaves+beeWaves+wormWaves;

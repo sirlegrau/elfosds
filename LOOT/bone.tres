@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Loot" format=3 uid="uid://b1ujgn8k3r3x"]
+
+[ext_resource type="PackedScene" uid="uid://dxwfruc28ai0y" path="res://SCENE/loot.tscn" id="1_o4gtq"]
+[ext_resource type="Script" uid="uid://c0tl0r8iuijjt" path="res://LOOT/loot.gd" id="2_ywkjl"]
+[ext_resource type="Texture2D" uid="uid://c0yj7c0u5n8ib" path="res://LOOT/SPRITE/bone.png" id="3_o4gtq"]
+
+[resource]
+script = ExtResource("2_ywkjl")
+name = "bone"
+scene = ExtResource("1_o4gtq")
+texture = ExtResource("3_o4gtq")
+metadata/_custom_type_script = "uid://c0tl0r8iuijjt"

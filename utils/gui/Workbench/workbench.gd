@@ -58,7 +58,7 @@ func clearCostGrid():
 		node.queue_free()
 		
 func displayXMAS():
-	var availableXMAS = Datactrl.loot["exp"]
+	var availableXMAS = Datactrl.loot["xmas"]
 	var timesUSED = Datactrl.timesbought["WORKBENCH"]
 	var currentCost = int(((timesUSED*timesUSED)+timesUSED)/2)+1
 	xmas.text = str(currentCost)
@@ -84,7 +84,7 @@ func payLoot() :
 	
 	var timesUSED = Datactrl.timesbought["WORKBENCH"]
 	var currentCost = int(((timesUSED*timesUSED)+timesUSED)/2)+1
-	Datactrl.loot["exp"] -= currentCost
+	Datactrl.loot["xmas"] -= currentCost
 	
 func checkFullInventory():
 	var invFUll = true

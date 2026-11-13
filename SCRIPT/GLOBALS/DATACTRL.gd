@@ -10,9 +10,13 @@ var sleepyTime = 15;
 ### THIS DICTIONARY HOLDS PLAYER CURRENT ITEMS  
 var loot ={
 	### TO BE RENAMED XMAS
-	"exp" : 4000,
+	"xmas" : 4000,
 	"silk" : 4000,
-	"honey" :10
+	"eye" :0,
+	"bone" :0,
+	"blood" :0,
+	"horn" :0
+	
 }
 
 ### THIS ARRAY HOLDS PLAYER INVENTORY USED ACROSS ALL MACHINES

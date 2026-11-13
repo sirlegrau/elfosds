@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://bdr2ykwtsspcr"]
+
+[ext_resource type="Script" uid="uid://cv4e7x0p7dseo" path="res://ENEMY/vampire/vampire.gd" id="1_7h1ym"]
+[ext_resource type="Resource" uid="uid://gulxofp4ridf" path="res://LOOT/eye.tres" id="2_jmof8"]
+[ext_resource type="Resource" uid="uid://dwk3xwl0f14wr" path="res://LOOT/xmas.tres" id="3_em7n7"]
+[ext_resource type="Texture2D" uid="uid://dfkihn3dijxbr" path="res://ENEMY/vampire/vampire.png" id="4_nfnj5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fd5d6"]
+atlas = ExtResource("4_nfnj5")
+region = Rect2(0, 0, 28, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u1vwt"]
+atlas = ExtResource("4_nfnj5")
+region = Rect2(28, 0, 28, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pqige"]
+atlas = ExtResource("4_nfnj5")
+region = Rect2(56, 0, 28, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_px2qx"]
+atlas = ExtResource("4_nfnj5")
+region = Rect2(84, 0, 28, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wa3bq"]
+atlas = ExtResource("4_nfnj5")
+region = Rect2(112, 0, 28, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bdrcq"]
+atlas = ExtResource("4_nfnj5")
+region = Rect2(140, 0, 28, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w0dtl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fd5d6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u1vwt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pqige")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_px2qx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wa3bq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bdrcq")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vbneo"]
+radius = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c5pe8"]
+
+[node name="Vampire" type="CharacterBody2D" unique_id=20342196]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_7h1ym")
+loot = ExtResource("2_jmof8")
+experience = ExtResource("3_em7n7")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=37744941]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_w0dtl")
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=56085344]
+shape = SubResource("CircleShape2D_vbneo")
+
+[node name="area2denemy" type="Area2D" parent="." unique_id=1173187601]
+position = Vector2(18, 3)
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="area2denemy" unique_id=1745831436]
+position = Vector2(-18, -3)
+shape = SubResource("CircleShape2D_c5pe8")
+
+[connection signal="area_entered" from="area2denemy" to="." method="_on_area_2d_area_entered"]

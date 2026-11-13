@@ -229,7 +229,7 @@ offset_right = -96.0
 offset_bottom = 17.0
 texture = ExtResource("5_no34m")
 
-[node name="loo1" type="Label" parent="lootcontainer/lootdisplay" unique_id=1763611755]
+[node name="loot1" type="Label" parent="lootcontainer/lootdisplay" unique_id=1763611755]
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = -95.0

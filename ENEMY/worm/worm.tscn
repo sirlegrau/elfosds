@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ddbj7oot8g0jr" path="res://ENEMY/worm/worm.gd" id="1_cjtxd"]
 [ext_resource type="Texture2D" uid="uid://cmvnbqicy7yuk" path="res://ENEMY/worm/worm.png" id="2_cjtxd"]
-[ext_resource type="Resource" uid="uid://dwk3xwl0f14wr" path="res://LOOT/exp.tres" id="2_lcxf7"]
+[ext_resource type="Resource" uid="uid://dwk3xwl0f14wr" path="res://LOOT/xmas.tres" id="2_lcxf7"]
 [ext_resource type="Resource" uid="uid://cod277w75m44m" path="res://LOOT/silk.tres" id="3_fbw6s"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vbneo"]

@@ -17,7 +17,7 @@ func _process(delta: float) -> void:
 	
 func GUIhandler() -> void:
 	$gold.text =str(Datactrl.playerHP)
-	$xmas.text = str(Datactrl.loot["exp"])
+	$xmas.text = str(Datactrl.loot["xmas"])
 	$sleep.text = formatTime(Globalctr.sleepyTime)
 	for hp in hpcontainer.get_children():
 		hp.queue_free()
